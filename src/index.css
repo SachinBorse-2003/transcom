@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — deep marine navy + desert gold */
+  --color-navy-50: #f2f6fa;
+  --color-navy-100: #e2ebf3;
+  --color-navy-200: #c2d5e6;
+  --color-navy-300: #91b3d1;
+  --color-navy-400: #598cb6;
+  --color-navy-500: #356d9b;
+  --color-navy-600: #235682;
+  --color-navy-700: #1a4368;
+  --color-navy-800: #123453;
+  --color-navy-900: #0d2b45;
+  --color-navy-950: #08243f;
+  --color-navy-990: #051a2e;
+
+  --color-gold-50: #fdf9ef;
+  --color-gold-100: #faf0d7;
+  --color-gold-200: #f4dfab;
+  --color-gold-300: #ecc776;
+  --color-gold-400: #e3ac4a;
+  --color-gold-500: #d9a441;
+  --color-gold-600: #c1852c;
+  --color-gold-700: #a06726;
+  --color-gold-800: #825225;
+  --color-gold-900: #6c4522;
+
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f4f1ea;
+  --color-sand-200: #e8e2d6;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(8 36 63 / 0.04), 0 12px 32px -12px rgb(8 36 63 / 0.14);
+  --shadow-lift: 0 2px 4px rgb(8 36 63 / 0.05), 0 28px 56px -20px rgb(8 36 63 / 0.28);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-kenburns: kenburns 14s ease-out forwards;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes kenburns {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to { transform: scale(1.14) translate3d(-1.5%, -1%, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-navy-900 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Colour is inherited on purpose — a hard-coded navy here renders headings
+     invisible on the dark navy panels used throughout the site. */
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+    color: inherit;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-gold-500 text-navy-950;
+  }
+
+  /* Focus ring for keyboard users only */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold-500;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-display text-[11px] font-semibold tracking-[0.22em] uppercase;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+/* Scroll-reveal primitive */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Thin scrollbar for horizontal rails */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

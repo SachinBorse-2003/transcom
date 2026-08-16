@@ -50,13 +50,12 @@ export default function AboutIntro() {
           <SectionHeading
             eyebrow="Who we are"
             title="A trading house built on the boring things: specification, documentation, delivery."
-            lead="TRANSCOM General Trading L.L.C was licensed in Dubai in 2023 to solve a problem its founders had watched from the inside for years — too many intermediaries, too little accountability. We took the middle of the chain and made it one desk."
+            lead="Licensed in Dubai in 2023 to fix what its founders had watched break for years: too many intermediaries, too little accountability."
           />
 
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-navy-900/70">
-            Today we operate ten divisions across energy, industrial and food commodities. Each one runs on the
-            same discipline: an audited producer, a written specification, an independent inspection and a
-            documentary trail that clears customs the first time.
+            Nine divisions, one discipline: an audited producer, a written specification, an independent
+            inspection, and paperwork that clears customs first time.
           </p>
 
           <div className="mt-10 space-y-6">

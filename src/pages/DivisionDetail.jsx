@@ -54,8 +54,7 @@ export default function DivisionDetail() {
 
             <h3 className="mt-12 font-display text-[19px] font-semibold">Product range</h3>
             <p className="mt-2 text-[14.5px] text-navy-900/60">
-              A working selection — if a line is not listed, ask. Most of what we ship began as a special
-              request.
+              A working selection — if a line is not listed, ask.
             </p>
 
             <ul className="mt-7 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
@@ -84,8 +83,7 @@ export default function DivisionDetail() {
                   Enquire about {division.short.toLowerCase()}
                 </h3>
                 <p className="mt-3 text-[14px] leading-relaxed text-white/60">
-                  Send the product, quantity, destination port and target price. We reply with a firm offer
-                  within 24 working hours.
+                  Product, quantity, destination — firm offer within 24 working hours.
                 </p>
 
                 <div className="mt-7 space-y-4 border-t border-white/12 pt-7">

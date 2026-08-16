@@ -1,9 +1,12 @@
 # TRANSCOM GENERAL TRADING L.L.C — Website
 
-Marketing site for a Dubai-based general trading house, built with **Vite + React + Tailwind CSS v4**
-and **React Router**. Design language takes its cues from UAE trading-house sites such as
+Marketing site for a Dubai-based general trading house, built with **Vite + React + Tailwind CSS v4**,
+**React Router** and **three.js**. Design language takes its cues from UAE trading-house sites such as
 alibulehya.com and fonoenergy.ae: a deep marine-navy and desert-gold palette, full-bleed photography,
 a sector-led division grid and quote-request calls to action throughout.
+
+The Global Reach section renders an interactive 3D globe — real continents as a dot matrix, with
+animated trade lanes running from Dubai to twelve destination ports.
 
 ## Quick start
 
@@ -49,7 +52,7 @@ These drive the footer bottom bar, the About compliance section and every contac
 | `address.lines` | No street address on the licence — only the P.O. Box is shown. Add the office and update `address.short` and `address.mapQuery`. | Header, footer, contact, map |
 | `hours` | Sun–Thu 09:00–18:00 assumed | Top bar, contact |
 | `social` | All `#` — point at real profiles or delete the entries | Header, footer |
-| `stats` | 10 divisions is real; 25+ markets, 600+ lines and 98% on-time are estimates | Home, About |
+| `stats` | 9 divisions is real; 25+ markets, 600+ lines and 98% on-time are estimates | Home, About |
 | `testimonials` | **Invented illustrations, not real clients.** Replace with quotes you have permission to use, or remove `<Testimonials />` from `src/pages/Home.jsx`. | Home |
 | About timeline | Only the 2023 entry comes from the licence; 2024–2026 are an editorial narrative | About |
 | Division copy | Product ranges and supplier claims (HALAL certificates, HACCP plants, tier-one modules, terminal access) are written to be typical of the trade — check each against what TRANSCOM actually offers | Division pages |
@@ -82,7 +85,7 @@ src/
 | --- | --- |
 | `/` | Home |
 | `/about` | About / story / milestones / compliance |
-| `/divisions` | All ten divisions, filterable by sector |
+| `/divisions` | All nine divisions, filterable by sector |
 | `/divisions/:slug` | Division detail — product range, checks, enquiry rail |
 | `/services` | Sourcing, logistics, inspection, finance, terms |
 | `/contact` | Contact cards, enquiry form, map |
@@ -102,7 +105,7 @@ component changes needed.
   short: 'Packaging',               // used in nav and cards
   tagline: 'One-line summary shown on the card.',
   image: 'photo-xxxxxxxxxxxxx',     // Unsplash id, or '/images/your-photo.jpg'
-  blurb: 'Two or three sentences for the division page.',
+  blurb: 'One or two sentences for the division page.',
   products: ['…', '…'],
   highlights: [{ title: '…', text: '…' }],
 }
@@ -143,4 +146,18 @@ host must serve `index.html` for unknown paths:
   `prefers-reduced-motion: reduce`.
 - Hero images ship a `srcset` so phones don't download the 1920px asset; below-fold photography is
   lazy-loaded.
-# transcom
+
+## The 3D globe
+
+`src/components/Globe.jsx` draws the trade-route globe with three.js.
+
+- **Continents are real.** `src/data/landPoints.js` holds ~2,250 land coordinates, produced by
+  sampling a world GeoJSON on an equal-area lat/lon grid. Regenerate with
+  `node scripts/sample-land.mjs` (adjust `LAT_STEP` for a denser or sparser dot matrix).
+- **Routes come from data.** `tradeHub` and `tradeRoutes` in `src/data/site.js` drive the arcs,
+  markers and travelling pulses — add a port there and it appears on the globe.
+- **It stays out of the initial download.** three.js is ~140 KB gzipped and is lazy-loaded via
+  `React.lazy`, so it is only fetched when a visitor reaches that section. The main bundle is
+  ~100 KB gzipped.
+- **It degrades.** Without WebGL the component falls back to a CSS sphere; under
+  `prefers-reduced-motion` the rotation and pulses stop. Drag to spin on both mouse and touch.

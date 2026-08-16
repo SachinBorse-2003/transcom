@@ -31,7 +31,7 @@ const timeline = [
   },
   {
     year: '2026',
-    title: 'Ten divisions, one desk',
+    title: 'Nine divisions, one desk',
     text: 'Industrial, solar and mobility lines added for contractors across Africa looking for a single consolidator in the Gulf — 25 markets served and a 98% on-time despatch record.',
   },
 ]
@@ -40,22 +40,22 @@ const values = [
   {
     icon: 'shield',
     title: 'Say the true number',
-    text: 'Glaze percentage, moisture content, hour meter, delivery date. We quote what is real, even when a competitor quotes what is attractive.',
+    text: 'Glaze, moisture, hour meter, delivery date — quoted as they are, not as they sell.',
   },
   {
     icon: 'target',
     title: 'Own the whole chain',
-    text: 'If a certificate is missing at the destination port, it is our problem — not the producer\'s and not the freight forwarder\'s.',
+    text: 'A certificate missing at the destination port is our problem, not the producer\'s.',
   },
   {
     icon: 'users',
     title: 'Trade for the long term',
-    text: 'A one-off margin is worth less than a client who reorders every quarter for a decade. We price accordingly.',
+    text: 'A one-off margin is worth less than a buyer who reorders every quarter.',
   },
   {
     icon: 'leaf',
     title: 'Waste nothing',
-    text: 'Consolidation, correct packing and honest shelf-life mean fewer rejections, fewer returns and less product in the bin.',
+    text: 'Correct packing and honest shelf-life mean fewer rejections and less product in the bin.',
   },
 ]
 
@@ -63,7 +63,7 @@ export default function About() {
   usePageMeta({
     title: 'About TRANSCOM General Trading L.L.C — Dubai Trading House',
     description:
-      'Licensed in Dubai in 2023, TRANSCOM General Trading L.L.C operates ten trading divisions across energy, industrial and food commodities, serving more than 25 markets.',
+      'Licensed in Dubai in 2023, TRANSCOM General Trading L.L.C operates nine trading divisions across energy, industrial and food commodities, serving more than 25 markets.',
   })
 
   return (
@@ -71,7 +71,7 @@ export default function About() {
       <PageHero
         eyebrow="About us"
         title="A young company holding an old-fashioned standard"
-        lead="TRANSCOM began in 2023 as a two-person foodstuff desk in Bur Dubai. It has grown because clients kept asking us to handle one more category — and we kept saying yes only when we could do it properly."
+        lead="A two-person foodstuff desk in Bur Dubai that grew one category at a time — saying yes only when we could do it properly."
         image="photo-1552664730-d307ca884978"
         crumbs={[{ label: 'About' }]}
       />
@@ -88,20 +88,14 @@ export default function About() {
             />
             <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-navy-900/70">
               <p>
-                Most trading problems are not sourcing problems. The producer usually exists, the price is
-                usually findable. What breaks is everything in between: a specification that drifts between
-                offer and loading, a certificate written for the wrong destination, a reefer that sat on a quay
-                for two days, a container that arrived with the right product in the wrong pack size.
+                Trading rarely breaks at sourcing. It breaks in between — a specification that drifts between
+                offer and loading, a certificate written for the wrong destination, a container that arrives
+                with the right product in the wrong pack size.
               </p>
               <p>
-                TRANSCOM was built to absorb that. We audit the producer before their first order and review
-                them after every shipment. We write the specification down and hold both sides to it. We book
-                the inspection, prepare the documents for the destination country's actual requirements, and
-                photograph the cargo before the seal goes on.
-              </p>
-              <p>
-                It is unglamorous work. It is also the reason the buyers who took a chance on a new licence in
-                2023 are still ordering today — across categories they never originally called us about.
+                TRANSCOM was built to absorb that: audited producers, a written specification, an inspection
+                booked before loading, and cargo photographed before the seal goes on. Unglamorous — and the
+                reason buyers who took a chance on a new licence in 2023 are still ordering today.
               </p>
             </div>
 
@@ -184,7 +178,7 @@ export default function About() {
             <SectionHeading
               eyebrow="What we hold to"
               title="Four rules that decide what we will and won't trade"
-              lead="They sound obvious written down. Holding them when a margin is on the table is the actual work."
+              lead="Obvious written down. Holding them with a margin on the table is the work."
             />
           </Reveal>
 
@@ -212,9 +206,8 @@ export default function About() {
               title="Licensed, registered and open to checking"
             />
             <p className="mt-5 max-w-md text-[14.5px] leading-relaxed text-white/60">
-              Documentation is not paperwork we produce afterwards — it is the product. Our licence details
-              are published here so any counterparty can verify them with the Dubai Department of Economic
-              Development before the first order.
+              Our licence details are published here so any counterparty can verify them with the DED before
+              the first order.
             </p>
             <Button to="/contact" className="mt-8">
               Request our company profile

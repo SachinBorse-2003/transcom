@@ -30,8 +30,7 @@ export default function CtaBanner() {
             Send us the product, quantity and destination. You'll have a firm offer within 24 hours.
           </h2>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60">
-            No obligation, no fishing for your supplier list — just a written quotation with incoterms, validity
-            and payment terms stated on the page.
+            A written quotation with incoterms, validity and payment terms stated on the page.
           </p>
         </Reveal>
 

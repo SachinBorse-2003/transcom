@@ -5,7 +5,7 @@ import Reveal from '../components/Reveal'
 import { SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
 import ProcessSteps from '../sections/ProcessSteps'
-import { divisions, groups } from '../data/site'
+import { divisionCountWord, divisions, groups } from '../data/site'
 import usePageMeta from '../lib/usePageMeta'
 
 export default function Divisions() {
@@ -14,7 +14,7 @@ export default function Divisions() {
   usePageMeta({
     title: 'Trading Divisions — TRANSCOM General Trading L.L.C',
     description:
-      'Ten trading divisions covering petroleum products, solar energy, electrical components, heavy equipment, auto spare parts, mobile accessories, fresh produce, meat, seafood and staples.',
+      'Nine trading divisions covering petroleum products, solar energy, electrical components, heavy equipment, auto spare parts, mobile accessories, meat and poultry, seafood and food staples.',
   })
 
   const visible = filter === 'all' ? divisions : divisions.filter((d) => d.group === filter)
@@ -25,8 +25,8 @@ export default function Divisions() {
     <>
       <PageHero
         eyebrow="Our divisions"
-        title="Ten trading divisions, one accountable desk"
-        lead="Energy, industrial and food commodities — each with its own specialists, its own approved supplier list and the same documentation standard."
+        title={`${divisionCountWord} trading divisions, one accountable desk`}
+        lead="Each with its own specialists and approved supplier list — and the same documentation standard."
         image="photo-1587293852726-70cdb56c2866"
         crumbs={[{ label: 'Divisions' }]}
       />
@@ -37,7 +37,7 @@ export default function Divisions() {
             <SectionHeading
               eyebrow="Browse the range"
               title="What TRANSCOM trades"
-              lead="Filter by sector, or open a division to see the full product list, sourcing markets and the checks we run before anything ships."
+              lead="Filter by sector, or open a division for the full product list."
             />
           </Reveal>
 

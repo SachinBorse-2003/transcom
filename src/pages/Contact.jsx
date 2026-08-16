@@ -125,7 +125,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Tell us what you need and where it has to land"
-        lead="Product, quantity, destination port and target price is enough to start. You will have a firm offer within 24 working hours."
+        lead="Product, quantity and destination is enough to start. Firm offer within 24 working hours."
         image="photo-1512453979798-5ea266f8880c"
         crumbs={[{ label: 'Contact' }]}
       />
@@ -170,7 +170,7 @@ export default function Contact() {
             <SectionHeading
               eyebrow="Request a quotation"
               title="Start an enquiry"
-              lead="Every field except the starred ones is optional — but the more you give us, the tighter the price comes back."
+              lead="The more you give us, the tighter the price comes back."
             />
 
             {sent && (

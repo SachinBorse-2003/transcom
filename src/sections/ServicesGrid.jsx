@@ -14,7 +14,7 @@ export default function ServicesGrid({ limit, withCta = false }) {
             align="center"
             eyebrow="What we handle"
             title="The whole middle of the chain"
-            lead="Buying is the easy part. What clients actually outsource to us is everything between the purchase order and the loading bay."
+            lead="Everything between the purchase order and the loading bay."
           />
         </Reveal>
 

@@ -27,7 +27,7 @@ export default function WhyUs() {
               tone="light"
               eyebrow="Why TRANSCOM"
               title="Anyone can quote. Fewer can deliver the same thing twice."
-              lead="Trading is not a price game — it is a reliability game. These are the six things clients tell us keep them from going back to tender."
+              lead="Trading is a reliability game. Six reasons clients stop running tenders."
             />
             <div className="mt-10 flex flex-wrap gap-4">
               <Button to="/contact">Start an enquiry</Button>

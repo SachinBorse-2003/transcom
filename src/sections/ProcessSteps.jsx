@@ -10,8 +10,8 @@ export default function ProcessSteps() {
           <SectionHeading
             align="center"
             eyebrow="How it works"
-            title="From enquiry to delivered container, in four steps"
-            lead="No stage moves until the previous one is documented. It is slower to describe than it is to run."
+            title="From enquiry to delivered container"
+            lead="No stage moves until the previous one is documented."
           />
         </Reveal>
 

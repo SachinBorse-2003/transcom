@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import Logo from './Logo'
 import Icon from './Icon'
-import { company, divisions, groups, navigation } from '../data/site'
+import { company, divisionCount, divisions, groups, navigation } from '../data/site'
 import { photo } from '../lib/image'
 
 function TopBar() {
@@ -85,7 +85,7 @@ function DivisionsMenu({ onNavigate }) {
         />
         <span className="absolute inset-0 bg-gradient-to-t from-navy-990 via-navy-950/70 to-transparent" />
         <span className="relative">
-          <span className="font-display text-lg font-semibold">All ten divisions</span>
+          <span className="font-display text-lg font-semibold">All {divisionCount} divisions</span>
           <span className="mt-1.5 block text-[13px] text-white/60">
             One counterparty across energy, industry and food.
           </span>

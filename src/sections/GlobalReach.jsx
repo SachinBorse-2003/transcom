@@ -1,60 +1,69 @@
+import { Suspense, lazy } from 'react'
 import Icon from '../components/Icon'
-import Photo from '../components/Photo'
 import Reveal from '../components/Reveal'
-import { SectionHeading } from '../components/ui'
-import { markets } from '../data/site'
+import { Button, SectionHeading } from '../components/ui'
+import { markets, tradeRoutes } from '../data/site'
+
+// three.js is ~150 KB gzipped — keep it out of the initial bundle.
+const Globe = lazy(() => import('../components/Globe'))
+
+function GlobeFallback() {
+  return (
+    <div className="absolute inset-0 grid place-items-center">
+      <div className="h-[62%] w-[62%] animate-pulse rounded-full bg-[radial-gradient(circle_at_35%_30%,var(--color-navy-700),var(--color-navy-950))]" />
+    </div>
+  )
+}
 
 export default function GlobalReach() {
   return (
-    <section className="relative overflow-hidden bg-sand-50 py-20 lg:py-28">
-      <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
-        <Reveal className="order-2 lg:order-1">
+    <section className="relative overflow-hidden bg-navy-990 py-20 text-white lg:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(53,109,155,0.22),transparent_62%)]"
+      />
+
+      <div className="relative container-x grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <Reveal>
           <SectionHeading
+            tone="light"
             eyebrow="Global reach"
-            title="Dubai in the middle, the trading world around it"
-            lead="Two-thirds of the world's population sits within an eight-hour flight of our office. That geography is the whole reason this business works from here."
+            title="Dubai in the middle, the trade routes around it"
+            lead="Two-thirds of the world sits within eight flying hours of our desk. Drag the globe to follow the routes."
           />
 
-          <div className="mt-10 divide-y divide-navy-950/10 border-y border-navy-950/10">
+          <div className="mt-9 grid grid-cols-2 gap-x-6 gap-y-4">
             {markets.map((m) => (
-              <div key={m.region} className="group flex gap-5 py-5">
-                <Icon name="pin" className="mt-0.5 h-4.5 w-4.5 shrink-0 text-gold-600" />
-                <div>
-                  <h3 className="font-display text-[15px] font-semibold">{m.region}</h3>
-                  <p className="mt-1.5 text-[13.5px] leading-relaxed text-navy-900/60">{m.places}</p>
-                </div>
+              <div key={m.region} className="flex items-baseline gap-2.5 border-b border-white/10 pb-3">
+                <span className="font-display text-[15px] font-semibold text-gold-400">{m.count}</span>
+                <span className="text-[13px] leading-snug text-white/60">{m.region}</span>
               </div>
             ))}
           </div>
+
+          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="flex items-center gap-2.5 text-[13px] text-white/55">
+              <Icon name="ship" className="h-4 w-4 text-gold-500" />
+              Jebel Ali &amp; DXB on the doorstep
+            </span>
+            <Button to="/contact" variant="ghostLight" arrow={false} className="px-6 py-3">
+              Ship with us
+            </Button>
+          </div>
         </Reveal>
 
-        <Reveal delay={120} className="relative order-1 lg:order-2">
-          <Photo
-            id="photo-1614107151491-6876eecbff89"
-            alt="Close-up of a globe showing trade routes"
-            width={1100}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="aspect-[5/6] w-full sm:aspect-[4/3] lg:aspect-[5/6]"
-            imgClassName="opacity-95"
-          />
-
-          <div className="absolute -bottom-6 -left-4 w-[74%] bg-white p-6 shadow-lift sm:left-6 sm:w-[62%]">
-            <div className="flex items-center gap-4">
-              <span className="grid h-11 w-11 place-items-center bg-navy-950 text-gold-400">
-                <Icon name="ship" className="h-5 w-5" />
-              </span>
-              <div>
-                <p className="font-display text-[15px] font-semibold">Jebel Ali & DXB on our doorstep</p>
-                <p className="mt-1 text-[13px] text-navy-900/60">
-                  Free-zone re-export keeps duty off your landed cost.
-                </p>
-              </div>
+        <Reveal delay={120}>
+          <div className="mx-auto w-full max-w-[560px]">
+            <div className="relative aspect-square w-full">
+              <Suspense fallback={<GlobeFallback />}>
+                <Globe className="h-full w-full" />
+              </Suspense>
             </div>
-          </div>
 
-          <div className="absolute -top-5 right-4 hidden bg-gold-500 px-6 py-5 text-navy-950 shadow-lift sm:block">
-            <p className="font-display text-[26px] leading-none font-semibold">8 hrs</p>
-            <p className="mt-1.5 text-[12px] font-medium">flight to two-thirds of the world</p>
+            <div className="mt-2 flex items-center justify-center gap-2.5 text-[11.5px] tracking-[0.14em] text-white/40 uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+              {tradeRoutes.length} route lanes from Dubai
+            </div>
           </div>
         </Reveal>
       </div>

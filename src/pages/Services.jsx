@@ -13,7 +13,7 @@ const capabilities = [
     image: 'photo-1553413077-190dd305871c',
     eyebrow: 'Warehousing & consolidation',
     title: 'Mixed loads, one container, one seal',
-    text: 'Ambient, chilled and frozen storage in Dubai lets us hold your goods while the rest of the order lands. Instead of four part-loads from four suppliers, you receive one consolidated container with one packing list — usually at a materially lower cost per line.',
+    text: 'We hold your goods while the rest of the order lands. Four part-loads from four suppliers become one container with one packing list — usually at a lower cost per line.',
     points: [
       'Ambient, +2 °C to +8 °C chilled and −18 °C frozen space',
       'Cross-docking and re-packing to your carton spec',
@@ -25,7 +25,7 @@ const capabilities = [
     image: 'photo-1607472586893-edb57bdc0e39',
     eyebrow: 'Inspection & quality',
     title: 'Problems caught in Dubai, not at your gate',
-    text: 'Every consignment is checked against the written specification before it leaves. Where the value or the risk justifies it, we appoint SGS, Intertek or your own nominated surveyor and release payment only on a clean report.',
+    text: 'Every consignment is checked against the written specification before it leaves — and where the risk justifies it, payment is released only on a clean surveyor report.',
     points: [
       'Pre-shipment inspection with photographic evidence',
       'Independent laboratory analysis for food and fuel lots',
@@ -38,7 +38,7 @@ const capabilities = [
     image: 'photo-1516937941344-00b4e0337589',
     eyebrow: 'Documentation & finance',
     title: 'Paperwork that clears the first time',
-    text: 'A certificate written for the wrong authority is worth nothing at a border. We prepare documents against the importing country\'s real requirements and work with established U.A.E. banks on the payment structure that suits the relationship.',
+    text: 'A certificate written for the wrong authority is worth nothing at a border. We prepare documents against the importing country\'s real requirements.',
     points: [
       'Certificate of origin, legalisation and consular attestation',
       'HALAL, health and phytosanitary certification',
@@ -60,7 +60,7 @@ export default function Services() {
       <PageHero
         eyebrow="Services"
         title="Everything between the purchase order and the loading bay"
-        lead="Buying is the easy part. What our clients actually outsource is the middle of the chain — and the accountability that comes with it."
+        lead="The middle of the chain — and the accountability that comes with it."
         image="photo-1553413077-190dd305871c"
         crumbs={[{ label: 'Services' }]}
       />

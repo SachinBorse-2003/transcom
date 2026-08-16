@@ -16,7 +16,7 @@ export const company = {
   descriptor: 'General Trading • Import & Export • Dubai, U.A.E.',
   founded: 2023,
   intro:
-    'TRANSCOM General Trading L.L.C is a Dubai-based trading house that sources, supplies and ships across the energy, industrial and food sectors. From a single office in the U.A.E. we connect verified producers with buyers in more than 25 markets — handling procurement, documentation, quality control and delivery as one accountable chain.',
+    'A Dubai trading house connecting verified producers with buyers in more than 25 markets — energy, industrial and food, handled as one accountable chain.',
 
   // From the trade licence — the mobile is the only number on record.
   phone: '+971 56 804 4756',
@@ -63,12 +63,7 @@ export const registration = {
   expires: '30 October 2027',
 }
 
-export const stats = [
-  { value: 10, suffix: '', label: 'Trading divisions', sub: 'Energy, industrial and foodstuff' },
-  { value: 25, suffix: '+', label: 'Markets served', sub: 'GCC, Africa, Asia & Europe' },
-  { value: 600, suffix: '+', label: 'Product lines', sub: 'Quoted from stock or to order' },
-  { value: 98, suffix: '%', label: 'On-time shipments', sub: 'Measured across 2025 despatches' },
-]
+/* `stats` is defined below the divisions array so the division count stays in step. */
 
 /* ── Trading divisions ─────────────────────────────────────────────────────── */
 
@@ -99,7 +94,7 @@ export const divisions = [
     tagline: 'Refined fuels and lubricants from vetted regional refineries.',
     image: 'photo-1516937941344-00b4e0337589',
     blurb:
-      'We supply refined petroleum products and finished lubricants on FOB, CIF and CFR terms, working directly with refineries and licensed storage terminals in the Gulf. Every parcel is independently inspected before loading and moves with a full documentary trail.',
+      'Refined products and finished lubricants on FOB, CIF and CFR terms, straight from Gulf refineries and licensed terminals — every parcel inspected before loading.',
     products: [
       'Gasoil / Diesel EN590 10ppm & 50ppm',
       'Jet A-1 aviation fuel',
@@ -124,7 +119,7 @@ export const divisions = [
     tagline: 'Balance-of-system supply for rooftop, ground-mount and off-grid projects.',
     image: 'photo-1509391366360-2e959784a276',
     blurb:
-      'From tier-one modules to mounting rails and cable, we consolidate complete solar packages for EPC contractors across the Middle East and East Africa — shipped as one container, one invoice, one point of contact.',
+      'Complete solar packages for EPC contractors — modules, inverters, mounting and cable consolidated into one container and one invoice.',
     products: [
       'Monocrystalline & bifacial PV modules (400W – 700W)',
       'String and hybrid inverters',
@@ -149,7 +144,7 @@ export const divisions = [
     tagline: 'Switchgear, cable and control gear for contractors and distributors.',
     image: 'photo-1518770660439-4636190af475',
     blurb:
-      'A deep catalogue of low- and medium-voltage electrical material, held to IEC and BS standards and backed by manufacturer certificates of conformity. We serve both project releases and stock-and-serve distributor programmes.',
+      'Low- and medium-voltage material to IEC and BS standards, backed by manufacturer certificates of conformity.',
     products: [
       'LV & MV switchgear, panels and distribution boards',
       'MCBs, MCCBs, RCCBs and contactors',
@@ -174,7 +169,7 @@ export const divisions = [
     tagline: 'New and certified pre-owned plant for construction and quarrying.',
     image: 'photo-1621922688758-359fc864071e',
     blurb:
-      'We locate, inspect and ship earth-moving and material-handling equipment worldwide — with hour-meter verification, service history and a written condition report before any payment is released.',
+      'Earth-moving and material-handling plant, shipped with hour-meter verification and a written condition report before payment is released.',
     products: [
       'Excavators, wheel loaders and bulldozers',
       'Backhoe loaders and skid steers',
@@ -199,7 +194,7 @@ export const divisions = [
     tagline: 'Genuine, OEM and aftermarket parts for Japanese, Korean, European and American fleets.',
     image: 'photo-1487754180451-c456f719a1fc',
     blurb:
-      'Dubai is the world\'s re-export hub for automotive parts, and we work the market daily. Orders are picked against VIN or part number, photographed before packing and consolidated to keep freight cost per line as low as possible.',
+      'Picked against VIN or part number, photographed before packing and consolidated to keep freight cost per line down.',
     products: [
       'Engine, transmission and drivetrain components',
       'Brake pads, discs, and suspension parts',
@@ -224,7 +219,7 @@ export const divisions = [
     tagline: 'Wholesale handsets and accessories with region-correct specifications.',
     image: 'photo-1591117207239-788bf8de6c3b',
     blurb:
-      'We supply distributors and retail chains with genuine handsets, tablets and accessories, matched to the plug type, band support and warranty regime of the destination market.',
+      'Genuine handsets, tablets and accessories, matched to the plug type, band support and warranty regime of the destination market.',
     products: [
       'Smartphones and tablets — global and regional variants',
       'Smart watches and wearables',
@@ -242,31 +237,6 @@ export const divisions = [
     ],
   },
   {
-    slug: 'fruits-vegetables',
-    group: 'food',
-    name: 'Fresh Fruits & Vegetables',
-    short: 'Fruits & Vegetables',
-    tagline: 'Daily-sourced produce moving through an unbroken cold chain.',
-    image: 'photo-1610348725531-843dff563e2c',
-    blurb:
-      'We buy from growers and packhouses in India, Egypt, Kenya, Turkey, the Netherlands and South America, and clear through Dubai on the same cold chain that ends at your loading bay. Grading and shelf-life are agreed in writing before the first pallet moves.',
-    products: [
-      'Citrus — orange, lemon, mandarin, grapefruit',
-      'Apples, pears, grapes and stone fruit',
-      'Bananas, mangoes, pineapple and papaya',
-      'Onions, potatoes, garlic and ginger',
-      'Tomatoes, cucumbers, peppers and aubergine',
-      'Leafy greens and fresh herbs',
-      'Dates, dried fruit and nuts',
-      'Frozen fruit and vegetable packs',
-    ],
-    highlights: [
-      { title: 'Unbroken cold chain', text: 'Reefer temperature logged from packhouse to delivery point.' },
-      { title: 'Agreed grading', text: 'Size, brix and class fixed in the specification sheet before purchase.' },
-      { title: 'Air & sea options', text: 'Airfreight for short-life lines, reefer sea freight for volume.' },
-    ],
-  },
-  {
     slug: 'meat-poultry',
     group: 'food',
     name: 'Meat, Poultry & Eggs',
@@ -274,7 +244,7 @@ export const divisions = [
     tagline: 'HALAL-certified protein from approved abattoirs and processors.',
     image: 'photo-1607623814075-e51df1bdc82f',
     blurb:
-      'All meat and poultry is sourced from establishments approved by U.A.E. authorities and slaughtered under recognised HALAL supervision. Certificates travel with the cargo, and every consignment is traceable to its lot.',
+      'Sourced from establishments approved by U.A.E. authorities under recognised HALAL supervision, traceable to the lot.',
     products: [
       'Frozen whole chicken and portions',
       'Chilled and frozen beef cuts',
@@ -299,7 +269,7 @@ export const divisions = [
     tagline: 'Wild-caught and farmed seafood held at a stable −18 °C.',
     image: 'photo-1615141982883-c7ad0e69fd62',
     blurb:
-      'Whole fish, fillets, shrimp and cephalopods sourced from Oman, India, Vietnam, Ecuador and the North Atlantic — with glaze percentage, count size and packing declared honestly on every offer.',
+      'Whole fish, fillets, shrimp and cephalopods from Oman, India, Vietnam and Ecuador — glaze, count size and packing declared on every offer.',
     products: [
       'Vannamei and black tiger shrimp',
       'Whole and filleted white fish',
@@ -324,7 +294,7 @@ export const divisions = [
     tagline: 'Bulk and packed staples for wholesalers, mills and institutional buyers.',
     image: 'photo-1626808642875-0aa545482dfb',
     blurb:
-      'Container and bulk supply of edible oils, rice, sugar, pulses and flour — including private-label packing in your own brand and artwork, produced at approved packers in the U.A.E. and origin markets.',
+      'Container and bulk staples — oils, rice, sugar, pulses and flour — with private-label packing in your own brand.',
     products: [
       'Sunflower, soybean, corn and palm olein',
       'Extra virgin and refined olive oil',
@@ -345,120 +315,81 @@ export const divisions = [
 
 export const divisionBySlug = (slug) => divisions.find((d) => d.slug === slug)
 
+/** Copy across the site says "Nine divisions" — derive it so it can never drift. */
+const NUMBER_WORDS = [
+  'Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight',
+  'Nine', 'Ten', 'Eleven', 'Twelve',
+]
+export const divisionCount = divisions.length
+export const divisionCountWord = NUMBER_WORDS[divisionCount] ?? String(divisionCount)
+
+export const stats = [
+  { value: divisionCount, suffix: '', label: 'Trading divisions', sub: 'Energy, industrial and foodstuff' },
+  { value: 25, suffix: '+', label: 'Markets served', sub: 'GCC, Africa, Asia & Europe' },
+  { value: 600, suffix: '+', label: 'Product lines', sub: 'Quoted from stock or to order' },
+  { value: 98, suffix: '%', label: 'On-time shipments', sub: 'Measured across 2025 despatches' },
+]
+
 /* ── Services ──────────────────────────────────────────────────────────────── */
 
 export const services = [
-  {
-    icon: 'search',
-    title: 'Sourcing & Procurement',
-    text: 'We find the producer, audit them, negotiate the price and hold the specification — so you deal with one counterparty instead of twenty.',
-  },
-  {
-    icon: 'ship',
-    title: 'Import, Export & Re-Export',
-    text: 'Full documentary handling: commercial invoice, packing list, certificate of origin, legalisation and letter-of-credit presentation.',
-  },
-  {
-    icon: 'truck',
-    title: 'Freight & Logistics',
-    text: 'Sea, air, road and multimodal movements through Jebel Ali, Port Rashid and DXB, with rates fixed before you commit.',
-  },
-  {
-    icon: 'warehouse',
-    title: 'Warehousing & Cold Chain',
-    text: 'Ambient, chilled and frozen storage in Dubai, with consolidation, re-packing and call-off delivery against your schedule.',
-  },
-  {
-    icon: 'shield',
-    title: 'Quality Assurance & Inspection',
-    text: 'Pre-shipment inspection by SGS, Intertek or your own nominated surveyor, with photographic evidence at every stage.',
-  },
-  {
-    icon: 'file',
-    title: 'Trade Finance & Documentation',
-    text: 'LC at sight, usance, CAD and bank-guarantee structures arranged through established U.A.E. banking relationships.',
-  },
-  {
-    icon: 'box',
-    title: 'Private Label & Packing',
-    text: 'Own-brand production, artwork development, barcoding and retail-ready packing at approved facilities.',
-  },
-  {
-    icon: 'chart',
-    title: 'Market Intelligence',
-    text: 'Weekly price indications and availability reports on the commodities you buy, so your timing is your advantage.',
-  },
+  { icon: 'search', title: 'Sourcing & Procurement', text: 'Audited producers, negotiated price, one counterparty.' },
+  { icon: 'ship', title: 'Import & Export', text: 'Invoice, origin, legalisation and LC presentation.' },
+  { icon: 'truck', title: 'Freight & Logistics', text: 'Sea, air and road through Jebel Ali and DXB.' },
+  { icon: 'warehouse', title: 'Warehousing & Cold Chain', text: 'Ambient, chilled and frozen storage in Dubai.' },
+  { icon: 'shield', title: 'Quality & Inspection', text: 'SGS, Intertek or your own surveyor before loading.' },
+  { icon: 'file', title: 'Trade Finance', text: 'LC at sight, usance, CAD and bank guarantees.' },
+  { icon: 'box', title: 'Private Label & Packing', text: 'Own-brand production and retail-ready packs.' },
+  { icon: 'chart', title: 'Market Intelligence', text: 'Weekly price and availability on what you buy.' },
 ]
 
 /* ── Differentiators ───────────────────────────────────────────────────────── */
 
 export const advantages = [
-  {
-    icon: 'anchor',
-    title: 'Positioned in Dubai',
-    text: 'Two-thirds of the world lives within eight flying hours of us. Jebel Ali and DXB are on our doorstep, and free-zone re-export keeps duty off your landed cost.',
-  },
-  {
-    icon: 'shield',
-    title: 'Verified counterparties',
-    text: 'Every supplier is audited before their first order and reviewed after every shipment. We have declined more suppliers than we have appointed.',
-  },
-  {
-    icon: 'clock',
-    title: 'Answers within the day',
-    text: 'Enquiries are quoted within 24 working hours. If a line is unavailable we tell you immediately rather than letting the clock run.',
-  },
-  {
-    icon: 'layers',
-    title: 'One counterparty, ten divisions',
-    text: 'Fuel, machinery and foodstuff on the same contract, the same documentation standard and the same account manager.',
-  },
-  {
-    icon: 'globe',
-    title: 'Documentation that clears',
-    text: 'Certificates of origin, HALAL, health and legalisation prepared for the destination country, not generically.',
-  },
-  {
-    icon: 'handshake',
-    title: 'Priced to be repeated',
-    text: 'We quote for the second order as much as the first. Margin discipline is why the buyers who tried us in our first year are still on the books.',
-  },
+  { icon: 'anchor', title: 'Positioned in Dubai', text: 'Jebel Ali and DXB on the doorstep; free-zone re-export keeps duty off your landed cost.' },
+  { icon: 'shield', title: 'Verified counterparties', text: 'Suppliers audited before the first order, reviewed after every shipment.' },
+  { icon: 'clock', title: 'Answers within the day', text: 'Quoted in 24 working hours — or told straight away that it is unavailable.' },
+  { icon: 'layers', title: 'One desk, every category', text: 'Fuel, machinery and foodstuff on one contract and one account manager.' },
+  { icon: 'globe', title: 'Documentation that clears', text: 'Certificates prepared for the destination country, not generically.' },
+  { icon: 'handshake', title: 'Priced to be repeated', text: 'We quote for the second order as much as the first.' },
 ]
 
 /* ── Process ───────────────────────────────────────────────────────────────── */
 
 export const process = [
-  {
-    step: '01',
-    title: 'Enquiry & specification',
-    text: 'You send the product, quantity, destination and target price. We convert it into a written specification so both sides are buying the same thing.',
-  },
-  {
-    step: '02',
-    title: 'Sourcing & firm offer',
-    text: 'We approach approved producers, verify current availability and issue a firm offer with incoterms, validity and payment terms stated.',
-  },
-  {
-    step: '03',
-    title: 'Inspection & shipment',
-    text: 'Goods are inspected before loading, documents are prepared for the destination, and the container is sealed and booked.',
-  },
-  {
-    step: '04',
-    title: 'Delivery & after-sales',
-    text: 'You get tracking, arrival documents and a named contact for any claim — with the next contract already being priced.',
-  },
+  { step: '01', title: 'Enquiry', text: 'Product, quantity, destination — written up as one agreed specification.' },
+  { step: '02', title: 'Firm offer', text: 'Approved producers approached; incoterms, validity and terms stated.' },
+  { step: '03', title: 'Inspection', text: 'Checked and photographed before the container is sealed.' },
+  { step: '04', title: 'Delivery', text: 'Tracking, arrival documents and a named contact for any claim.' },
 ]
 
 /* ── Markets ───────────────────────────────────────────────────────────────── */
 
 export const markets = [
-  { region: 'GCC & Middle East', places: 'U.A.E. · Saudi Arabia · Oman · Qatar · Kuwait · Bahrain · Iraq · Jordan' },
-  { region: 'East & West Africa', places: 'Kenya · Tanzania · Uganda · Somalia · Djibouti · Ghana · Nigeria · Senegal' },
-  { region: 'North Africa', places: 'Egypt · Libya · Sudan · Morocco · Algeria' },
-  { region: 'South & Central Asia', places: 'India · Pakistan · Bangladesh · Sri Lanka · Afghanistan · Uzbekistan' },
-  { region: 'Southeast Asia & Far East', places: 'China · Vietnam · Thailand · Malaysia · Indonesia · Singapore' },
-  { region: 'Europe & CIS', places: 'Netherlands · Turkey · Ukraine · Russia · Georgia · Poland' },
+  { region: 'GCC & Middle East', count: 8 },
+  { region: 'East & West Africa', count: 8 },
+  { region: 'North Africa', count: 5 },
+  { region: 'South & Central Asia', count: 6 },
+  { region: 'Southeast Asia & Far East', count: 6 },
+  { region: 'Europe & CIS', count: 6 },
+]
+
+/** Origin and destinations for the 3D globe in the Global Reach section. */
+export const tradeHub = { name: 'Dubai', lat: 25.2, lon: 55.27 }
+
+export const tradeRoutes = [
+  { name: 'Riyadh', lat: 24.71, lon: 46.68 },
+  { name: 'Cairo', lat: 30.04, lon: 31.24 },
+  { name: 'Istanbul', lat: 41.01, lon: 28.98 },
+  { name: 'Rotterdam', lat: 51.92, lon: 4.48 },
+  { name: 'Lagos', lat: 6.45, lon: 3.39 },
+  { name: 'Mombasa', lat: -4.04, lon: 39.67 },
+  { name: 'Dar es Salaam', lat: -6.79, lon: 39.2 },
+  { name: 'Karachi', lat: 24.86, lon: 67.01 },
+  { name: 'Mumbai', lat: 19.08, lon: 72.88 },
+  { name: 'Colombo', lat: 6.93, lon: 79.86 },
+  { name: 'Singapore', lat: 1.35, lon: 103.82 },
+  { name: 'Shanghai', lat: 31.23, lon: 121.47 },
 ]
 
 /* ── Credentials ───────────────────────────────────────────────────────────── */
@@ -488,19 +419,19 @@ export const credentials = [
 export const testimonials = [
   {
     quote:
-      'We had been buying reefer produce through three different agents. TRANSCOM took the whole programme, held the specification and cut our rejection rate to almost nothing. Two years on we have not put it back out to tender.',
+      'Three agents became one desk. The specification held, the rejections stopped, and we have not put it back out to tender since.',
     name: 'Procurement Director',
     role: 'Retail group, Nairobi',
   },
   {
     quote:
-      'Their pre-shipment photographs have saved us twice — once on a wrong pack size and once on a damaged pallet, both caught in Dubai instead of at our gate. That is what we actually pay a trader for.',
+      'Their pre-shipment photographs caught a wrong pack size in Dubai instead of at our gate. That is what you actually pay a trader for.',
     name: 'Supply Chain Manager',
     role: 'Foodservice distributor, Muscat',
   },
   {
     quote:
-      'Solar BOM from six vendors, one container, one invoice, on the date they promised. For an EPC running a fixed programme that is worth more than a two per cent price difference.',
+      'Solar BOM from six vendors, one container, one invoice, on the date they promised.',
     name: 'Project Manager',
     role: 'EPC contractor, Dar es Salaam',
   },

@@ -343,17 +343,6 @@ export const services = [
   { icon: 'chart', title: 'Market Intelligence', text: 'Weekly price and availability on what you buy.' },
 ]
 
-/* ── Differentiators ───────────────────────────────────────────────────────── */
-
-export const advantages = [
-  { icon: 'anchor', title: 'Positioned in Dubai', text: 'Jebel Ali and DXB on the doorstep; free-zone re-export keeps duty off your landed cost.' },
-  { icon: 'shield', title: 'Verified counterparties', text: 'Suppliers audited before the first order, reviewed after every shipment.' },
-  { icon: 'clock', title: 'Answers within the day', text: 'Quoted in 24 working hours — or told straight away that it is unavailable.' },
-  { icon: 'layers', title: 'One desk, every category', text: 'Fuel, machinery and foodstuff on one contract and one account manager.' },
-  { icon: 'globe', title: 'Documentation that clears', text: 'Certificates prepared for the destination country, not generically.' },
-  { icon: 'handshake', title: 'Priced to be repeated', text: 'We quote for the second order as much as the first.' },
-]
-
 /* ── Process ───────────────────────────────────────────────────────────────── */
 
 export const process = [
@@ -406,35 +395,6 @@ export const credentials = [
   { label: 'Dubai Chamber', sub: 'DCCI No. 495656' },
   { label: 'Established 2023', sub: 'Licensed 31 October 2023' },
   { label: 'Valid to 2027', sub: 'Licence expiry 30 October 2027' },
-]
-
-/* ── Testimonials ──────────────────────────────────────────────────────────── */
-
-/**
- * ⚠️ ILLUSTRATIVE ONLY — these are written examples, not real client feedback.
- * Publishing invented testimonials on a live company site is a genuine legal and
- * reputational risk. Replace them with quotes you have permission to use, or
- * delete the <Testimonials /> section from src/pages/Home.jsx.
- */
-export const testimonials = [
-  {
-    quote:
-      'Three agents became one desk. The specification held, the rejections stopped, and we have not put it back out to tender since.',
-    name: 'Procurement Director',
-    role: 'Retail group, Nairobi',
-  },
-  {
-    quote:
-      'Their pre-shipment photographs caught a wrong pack size in Dubai instead of at our gate. That is what you actually pay a trader for.',
-    name: 'Supply Chain Manager',
-    role: 'Foodservice distributor, Muscat',
-  },
-  {
-    quote:
-      'Solar BOM from six vendors, one container, one invoice, on the date they promised.',
-    name: 'Project Manager',
-    role: 'EPC contractor, Dar es Salaam',
-  },
 ]
 
 /* ── Navigation ────────────────────────────────────────────────────────────── */

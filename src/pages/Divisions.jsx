@@ -4,7 +4,6 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
-import ProcessSteps from '../sections/ProcessSteps'
 import { divisionCountWord, divisions, groups } from '../data/site'
 import usePageMeta from '../lib/usePageMeta'
 
@@ -77,7 +76,6 @@ export default function Divisions() {
         </div>
       </section>
 
-      <ProcessSteps />
       <CtaBanner />
     </>
   )

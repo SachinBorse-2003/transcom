@@ -37,7 +37,7 @@ export default function DivisionDetail() {
       />
 
       {/* Overview */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-20 lg:py-24">
         <div className="container-x grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
           <Reveal>
             <SectionHeading eyebrow="Overview" title={`Inside our ${division.short.toLowerCase()} desk`} />
@@ -140,27 +140,6 @@ export default function DivisionDetail() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Assurance strip */}
-      <section className="bg-sand-50 py-16 lg:py-20">
-        <div className="container-x grid gap-8 sm:grid-cols-3">
-          {[
-            { icon: 'shield', title: 'Inspected before loading', text: 'Third-party or client-nominated surveyor at origin.' },
-            { icon: 'file', title: 'Documents for the destination', text: 'Prepared against the importing country\'s actual requirements.' },
-            { icon: 'truck', title: 'Tracked to delivery', text: 'Arrival documents and a named contact for any claim.' },
-          ].map((item, i) => (
-            <Reveal key={item.title} delay={i * 90} className="flex gap-5">
-              <span className="grid h-12 w-12 shrink-0 place-items-center bg-navy-950 text-gold-400">
-                <Icon name={item.icon} className="h-5 w-5" />
-              </span>
-              <div>
-                <h3 className="font-display text-[15.5px] font-semibold">{item.title}</h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-navy-900/65">{item.text}</p>
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
 

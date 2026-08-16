@@ -7,7 +7,7 @@ export default function ServicesGrid({ limit, withCta = false }) {
   const items = limit ? services.slice(0, limit) : services
 
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-24">
       <div className="container-x">
         <Reveal>
           <SectionHeading

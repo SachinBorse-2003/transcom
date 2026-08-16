@@ -1,10 +1,8 @@
-import Icon from '../components/Icon'
 import PageHero from '../components/PageHero'
 import Photo from '../components/Photo'
 import Reveal from '../components/Reveal'
 import { Button, SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
-import StatsBar from '../sections/StatsBar'
 import { credentials, registration } from '../data/site'
 import usePageMeta from '../lib/usePageMeta'
 
@@ -36,29 +34,6 @@ const timeline = [
   },
 ]
 
-const values = [
-  {
-    icon: 'shield',
-    title: 'Say the true number',
-    text: 'Glaze, moisture, hour meter, delivery date — quoted as they are, not as they sell.',
-  },
-  {
-    icon: 'target',
-    title: 'Own the whole chain',
-    text: 'A certificate missing at the destination port is our problem, not the producer\'s.',
-  },
-  {
-    icon: 'users',
-    title: 'Trade for the long term',
-    text: 'A one-off margin is worth less than a buyer who reorders every quarter.',
-  },
-  {
-    icon: 'leaf',
-    title: 'Waste nothing',
-    text: 'Correct packing and honest shelf-life mean fewer rejections and less product in the bin.',
-  },
-]
-
 export default function About() {
   usePageMeta({
     title: 'About TRANSCOM General Trading L.L.C — Dubai Trading House',
@@ -76,10 +51,8 @@ export default function About() {
         crumbs={[{ label: 'About' }]}
       />
 
-      <StatsBar />
-
       {/* Story */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-20 lg:py-24">
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <SectionHeading
@@ -146,7 +119,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-sand-50 py-20 lg:py-28">
+      <section className="bg-sand-50 py-20 lg:py-24">
         <div className="container-x">
           <Reveal>
             <SectionHeading align="center" eyebrow="Milestones" title="How the business took shape" />
@@ -165,31 +138,6 @@ export default function About() {
                   <h3 className="font-display text-[17px] font-semibold">{t.title}</h3>
                   <p className="mt-2.5 text-[14.5px] leading-relaxed text-navy-900/65">{t.text}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="bg-white py-20 lg:py-28">
-        <div className="container-x">
-          <Reveal>
-            <SectionHeading
-              eyebrow="What we hold to"
-              title="Four rules that decide what we will and won't trade"
-              lead="Obvious written down. Holding them with a margin on the table is the work."
-            />
-          </Reveal>
-
-          <div className="mt-14 grid gap-px bg-navy-950/8 sm:grid-cols-2">
-            {values.map((v, i) => (
-              <Reveal key={v.title} delay={(i % 2) * 90} className="bg-white p-9">
-                <span className="grid h-12 w-12 place-items-center bg-sand-100 text-gold-600">
-                  <Icon name={v.icon} className="h-5.5 w-5.5" />
-                </span>
-                <h3 className="mt-6 font-display text-[17px] font-semibold">{v.title}</h3>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-navy-900/65">{v.text}</p>
               </Reveal>
             ))}
           </div>

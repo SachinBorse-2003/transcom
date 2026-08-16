@@ -4,7 +4,7 @@ import { process } from '../data/site'
 
 export default function ProcessSteps() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-24">
       <div className="container-x">
         <Reveal>
           <SectionHeading

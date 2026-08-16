@@ -1,52 +1,10 @@
-import Icon from '../components/Icon'
 import PageHero from '../components/PageHero'
-import Photo from '../components/Photo'
 import Reveal from '../components/Reveal'
 import { Button, SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
 import ProcessSteps from '../sections/ProcessSteps'
 import ServicesGrid from '../sections/ServicesGrid'
 import usePageMeta from '../lib/usePageMeta'
-
-const capabilities = [
-  {
-    image: 'photo-1553413077-190dd305871c',
-    eyebrow: 'Warehousing & consolidation',
-    title: 'Mixed loads, one container, one seal',
-    text: 'We hold your goods while the rest of the order lands. Four part-loads from four suppliers become one container with one packing list — usually at a lower cost per line.',
-    points: [
-      'Ambient, +2 °C to +8 °C chilled and −18 °C frozen space',
-      'Cross-docking and re-packing to your carton spec',
-      'Call-off delivery against a rolling schedule',
-      'Photographic record of every pallet before sealing',
-    ],
-  },
-  {
-    image: 'photo-1607472586893-edb57bdc0e39',
-    eyebrow: 'Inspection & quality',
-    title: 'Problems caught in Dubai, not at your gate',
-    text: 'Every consignment is checked against the written specification before it leaves — and where the risk justifies it, payment is released only on a clean surveyor report.',
-    points: [
-      'Pre-shipment inspection with photographic evidence',
-      'Independent laboratory analysis for food and fuel lots',
-      'Temperature logging across the cold chain',
-      'Lot-level traceability from producer to delivery',
-    ],
-    reverse: true,
-  },
-  {
-    image: 'photo-1516937941344-00b4e0337589',
-    eyebrow: 'Documentation & finance',
-    title: 'Paperwork that clears the first time',
-    text: 'A certificate written for the wrong authority is worth nothing at a border. We prepare documents against the importing country\'s real requirements.',
-    points: [
-      'Certificate of origin, legalisation and consular attestation',
-      'HALAL, health and phytosanitary certification',
-      'LC at sight and usance, CAD, and bank guarantees',
-      'Insurance placement on ICC (A) terms',
-    ],
-  },
-]
 
 export default function Services() {
   usePageMeta({
@@ -66,45 +24,6 @@ export default function Services() {
       />
 
       <ServicesGrid />
-
-      {/* Deep-dive capabilities */}
-      <section className="bg-sand-50 py-20 lg:py-28">
-        <div className="container-x space-y-20 lg:space-y-28">
-          {capabilities.map((cap) => (
-            <div
-              key={cap.title}
-              className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-20 ${
-                cap.reverse ? '[&>*:first-child]:lg:order-2' : ''
-              }`}
-            >
-              <Reveal>
-                <Photo
-                  id={cap.image}
-                  alt={cap.title}
-                  width={1000}
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="aspect-[4/3] w-full"
-                />
-              </Reveal>
-
-              <Reveal delay={110}>
-                <SectionHeading eyebrow={cap.eyebrow} title={cap.title} />
-                <p className="mt-6 text-[15px] leading-relaxed text-navy-900/70">{cap.text}</p>
-                <ul className="mt-8 space-y-3.5">
-                  {cap.points.map((p) => (
-                    <li key={p} className="flex items-start gap-3.5">
-                      <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center bg-gold-500/15 text-gold-600">
-                        <Icon name="check" className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      <span className="text-[14.5px] leading-snug text-navy-900/75">{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <ProcessSteps />
 

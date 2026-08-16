@@ -354,15 +354,6 @@ export const process = [
 
 /* ── Markets ───────────────────────────────────────────────────────────────── */
 
-export const markets = [
-  { region: 'GCC & Middle East', count: 8 },
-  { region: 'East & West Africa', count: 8 },
-  { region: 'North Africa', count: 5 },
-  { region: 'South & Central Asia', count: 6 },
-  { region: 'Southeast Asia & Far East', count: 6 },
-  { region: 'Europe & CIS', count: 6 },
-]
-
 /** Origin and destinations for the 3D globe in the Global Reach section. */
 export const tradeHub = { name: 'Dubai', lat: 25.2, lon: 55.27 }
 

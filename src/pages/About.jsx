@@ -1,5 +1,4 @@
 import PageHero from '../components/PageHero'
-import Photo from '../components/Photo'
 import Reveal from '../components/Reveal'
 import { Button, SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
@@ -72,75 +71,30 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              <div className="border-l-2 border-gold-500 pl-5">
-                <h3 className="font-display text-[14px] font-semibold tracking-wide uppercase">Our mission</h3>
-                <p className="mt-2.5 text-[14px] leading-relaxed text-navy-900/65">
-                  To be the single accountable counterparty between a verified producer and a buyer who needs
-                  the same result every time.
-                </p>
-              </div>
-              <div className="border-l-2 border-navy-950/15 pl-5">
-                <h3 className="font-display text-[14px] font-semibold tracking-wide uppercase">Our vision</h3>
-                <p className="mt-2.5 text-[14px] leading-relaxed text-navy-900/65">
-                  A trading house where a buyer in Nairobi, Muscat or Karachi can order fuel, machinery and
-                  food on one contract and trust all three.
-                </p>
-              </div>
+          </Reveal>
+
+          {/* Milestones sit beside the story rather than in a section of their own */}
+          <Reveal delay={120}>
+            <p className="font-display text-[11px] font-semibold tracking-[0.2em] text-gold-600 uppercase">
+              Milestones
+            </p>
+            <div className="mt-7">
+              {timeline.map((t) => (
+                <div key={t.year} className="group flex gap-6 pb-8 last:pb-0">
+                  <div className="flex flex-col items-center">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center border border-navy-950/15 font-display text-[12.5px] font-semibold">
+                      {t.year}
+                    </span>
+                    <span className="mt-2 w-px flex-1 bg-navy-950/12 group-last:hidden" aria-hidden="true" />
+                  </div>
+                  <div className="pt-2.5">
+                    <h3 className="font-display text-[15.5px] font-semibold">{t.title}</h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-navy-900/60">{t.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </Reveal>
-
-          <Reveal delay={120} className="relative">
-            <Photo
-              id="photo-1600880292203-757bb62b4baf"
-              alt="Trading team at work in the Dubai office"
-              width={1000}
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="aspect-[4/3] w-full"
-            />
-            <div className="mt-5 grid grid-cols-2 gap-5">
-              <Photo
-                id="photo-1587293852726-70cdb56c2866"
-                alt="Palletised goods in a Dubai warehouse"
-                width={600}
-                sizes="24vw"
-                className="aspect-square w-full"
-              />
-              <Photo
-                id="photo-1533900298318-6b8da08a523e"
-                alt="Crates of fresh produce at a wholesale market"
-                width={600}
-                sizes="24vw"
-                className="aspect-square w-full"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-sand-50 py-20 lg:py-24">
-        <div className="container-x">
-          <Reveal>
-            <SectionHeading align="center" eyebrow="Milestones" title="How the business took shape" />
-          </Reveal>
-
-          <div className="mx-auto mt-16 max-w-3xl">
-            {timeline.map((t, i) => (
-              <Reveal key={t.year} delay={i * 80} className="group relative flex gap-8 pb-10 last:pb-0">
-                <div className="flex flex-col items-center">
-                  <span className="grid h-14 w-14 shrink-0 place-items-center border border-navy-950/15 bg-white font-display text-[13px] font-semibold text-navy-950 transition-colors duration-500 group-hover:border-gold-500 group-hover:bg-gold-500">
-                    {t.year}
-                  </span>
-                  <span className="mt-2 w-px flex-1 bg-navy-950/12 group-last:hidden" aria-hidden="true" />
-                </div>
-                <div className="pt-3 pb-2">
-                  <h3 className="font-display text-[17px] font-semibold">{t.title}</h3>
-                  <p className="mt-2.5 text-[14.5px] leading-relaxed text-navy-900/65">{t.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

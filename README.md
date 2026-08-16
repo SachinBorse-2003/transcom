@@ -53,10 +53,13 @@ These drive the footer bottom bar, the About compliance section and every contac
 | `hours` | Sun–Thu 09:00–18:00 assumed | Top bar, contact |
 | `social` | All `#` — point at real profiles or delete the entries | Header, footer |
 | `stats` | 9 divisions is real; 25+ markets, 600+ lines and 98% on-time are estimates | Home, About |
-| `testimonials` | **Invented illustrations, not real clients.** Replace with quotes you have permission to use, or remove `<Testimonials />` from `src/pages/Home.jsx`. | Home |
 | About timeline | Only the 2023 entry comes from the licence; 2024–2026 are an editorial narrative | About |
 | Division copy | Product ranges and supplier claims (HALAL certificates, HACCP plants, tier-one modules, terminal access) are written to be typical of the trade — check each against what TRANSCOM actually offers | Division pages |
 | Domain | `https://www.transcomgt.ae` is assumed in `index.html`, `public/robots.txt` and `public/sitemap.xml` | SEO files |
+
+**Testimonials removed.** An earlier draft carried three invented client quotes. Publishing fabricated
+testimonials on a live company site is a real legal and reputational risk, so the section and its data
+are gone. Add a testimonials section back when you have quotes you have permission to use.
 
 **Certifications deliberately omitted.** An earlier draft displayed ISO 9001:2015, HACCP, HALAL and
 Dubai Municipality approval. Those were invented, and publishing unheld certifications on a live
@@ -74,8 +77,8 @@ src/
   data/site.js          All copy: company, divisions, services, markets, stats, nav
   lib/image.js          Unsplash URL + srcset helper (swap for local images here)
   lib/usePageMeta.js    Per-route <title> and meta description
-  components/           Header, Footer, Layout, Photo, Reveal, CountUp, Icon, ui primitives
-  sections/             Home page sections (hero, stats, divisions, why-us, process, …)
+  components/           Header, Footer, Layout, Photo, Reveal, Globe, Icon, ui primitives
+  sections/             Page sections (hero, divisions, capabilities, globe, process, CTA)
   pages/                Home, About, Divisions, DivisionDetail, Services, Contact, NotFound
 ```
 
@@ -114,6 +117,20 @@ component changes needed.
 Remember to re-run the sitemap generator (or add the URL by hand) after adding a division.
 
 ---
+
+## Page structure
+
+The site is deliberately short. The home page is five sections:
+
+1. **Hero** — one statement, two calls to action, three figures along the bottom.
+2. **Divisions** — all nine in a single grid.
+3. **Capabilities** — one list, one line per service.
+4. **Global reach** — the 3D trade-route globe.
+5. **Quote CTA.**
+
+There is no carousel, stats band, marquee, testimonial slider or process timeline on the home page —
+those were removed to keep it scannable. The process timeline and commercial terms live on
+`/services`, and the story, milestones and licence details live on `/about`.
 
 ## Photography
 

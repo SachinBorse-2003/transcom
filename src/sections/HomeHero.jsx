@@ -1,62 +1,76 @@
+import { Suspense, lazy } from 'react'
 import { Button } from '../components/ui'
-import { stats } from '../data/site'
-import { photo, photoSrcSet } from '../lib/image'
+import { stats, tradeRoutes } from '../data/site'
 
-const HERO_IMAGE = 'photo-1494412574643-ff11b0a5c1c3'
+// three.js is ~140 KB gzipped — loaded after first paint, with the CSS sphere
+// standing in until it arrives.
+const Globe = lazy(() => import('../components/Globe'))
+
+function GlobeFallback() {
+  return (
+    <div className="absolute inset-[10%] animate-pulse rounded-full bg-[radial-gradient(circle_at_34%_28%,var(--color-navy-700),var(--color-navy-950)_70%)]" />
+  )
+}
 
 export default function HomeHero() {
   return (
-    <section className="relative isolate flex min-h-[clamp(600px,100svh,900px)] flex-col justify-end overflow-hidden bg-navy-950">
-      <img
-        src={photo(HERO_IMAGE, { w: 1920, q: 74 })}
-        srcSet={photoSrcSet(HERO_IMAGE)}
-        sizes="100vw"
-        alt=""
-        loading="eager"
-        fetchPriority="high"
-        className="absolute inset-0 -z-10 h-full w-full animate-kenburns object-cover"
-      />
+    <section className="relative isolate overflow-hidden bg-navy-990 pt-[128px] pb-14 lg:pt-[150px] lg:pb-16">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,var(--color-navy-990)_10%,rgba(8,36,63,0.82)_48%,rgba(8,36,63,0.3)_100%)]"
+        className="pointer-events-none absolute top-1/2 right-0 h-[900px] w-[900px] -translate-y-1/2 translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(53,109,155,0.28),transparent_62%)]"
       />
 
-      <div className="container-x relative pt-40 pb-12 lg:pb-16">
-        <span className="eyebrow text-gold-400">
-          <span className="h-px w-10 bg-current opacity-70" aria-hidden="true" />
-          Dubai, U.A.E. · Trading since 2023
-        </span>
+      <div className="relative container-x grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+        <div>
+          <span className="eyebrow text-gold-400">
+            <span className="h-px w-10 bg-current opacity-70" aria-hidden="true" />
+            Dubai, U.A.E. · Since 2023
+          </span>
 
-        <h1 className="mt-7 max-w-3xl text-[clamp(2.6rem,7vw,5rem)] leading-[0.98] font-semibold tracking-[-0.035em] text-white">
-          Trade without
-          <br />
-          <span className="text-gold-400">borders</span>
-        </h1>
+          <h1 className="mt-7 text-[clamp(2.6rem,6.4vw,4.6rem)] leading-[0.98] font-semibold tracking-[-0.035em] text-white">
+            Trade without
+            <br />
+            <span className="text-gold-400">borders</span>
+          </h1>
 
-        <p className="mt-7 max-w-md text-[16px] leading-relaxed text-white/70">
-          Energy, industrial and food commodities — sourced, inspected and shipped from one Dubai desk.
-        </p>
+          <p className="mt-6 max-w-sm text-[16px] leading-relaxed text-white/65">
+            Energy, industrial and food — sourced, inspected and shipped from one Dubai desk.
+          </p>
 
-        <div className="mt-9 flex flex-wrap items-center gap-3.5">
-          <Button to="/divisions">What we trade</Button>
-          <Button to="/contact" variant="ghostLight" arrow={false}>
-            Request a quote
-          </Button>
+          <div className="mt-9 flex flex-wrap items-center gap-3.5">
+            <Button to="/divisions">What we trade</Button>
+            <Button to="/contact" variant="ghostLight" arrow={false}>
+              Request a quote
+            </Button>
+          </div>
+
+          <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/12 pt-7">
+            {stats.slice(0, 3).map((s) => (
+              <div key={s.label}>
+                <dt className="sr-only">{s.label}</dt>
+                <dd>
+                  <span className="font-display text-[26px] leading-none font-semibold text-white">
+                    {s.value}
+                    {s.suffix}
+                  </span>
+                  <span className="mt-2 block text-[12.5px] text-white/45">{s.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-      </div>
 
-      {/* Figures, in place of a separate stats band */}
-      <div className="relative border-t border-white/12">
-        <div className="container-x grid grid-cols-3 divide-x divide-white/10">
-          {stats.slice(0, 3).map((s) => (
-            <div key={s.label} className="px-1 py-6 first:pl-0 sm:px-8 sm:first:pl-0">
-              <p className="font-display text-[26px] leading-none font-semibold text-white sm:text-[32px]">
-                {s.value}
-                {s.suffix}
-              </p>
-              <p className="mt-2 text-[12.5px] text-white/45">{s.label}</p>
-            </div>
-          ))}
+        {/* Interactive trade-route globe */}
+        <div className="w-full">
+          <div className="relative mx-auto aspect-square w-full max-w-[400px] sm:max-w-[520px] lg:max-w-[620px]">
+            <Suspense fallback={<GlobeFallback />}>
+              <Globe className="h-full w-full" />
+            </Suspense>
+          </div>
+
+          <p className="mt-1 text-center text-[11.5px] tracking-[0.14em] text-white/35 uppercase">
+            Drag to spin · {tradeRoutes.length} route lanes from Dubai
+          </p>
         </div>
       </div>
     </section>

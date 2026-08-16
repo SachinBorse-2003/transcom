@@ -1,7 +1,5 @@
 import HomeHero from '../sections/HomeHero'
 import DivisionsShowcase from '../sections/DivisionsShowcase'
-import CapabilityList from '../sections/CapabilityList'
-import GlobalReach from '../sections/GlobalReach'
 import CtaBanner from '../sections/CtaBanner'
 import usePageMeta from '../lib/usePageMeta'
 
@@ -16,8 +14,6 @@ export default function Home() {
     <>
       <HomeHero />
       <DivisionsShowcase />
-      <CapabilityList />
-      <GlobalReach />
       <CtaBanner />
     </>
   )

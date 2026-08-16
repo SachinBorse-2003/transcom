@@ -237,7 +237,8 @@ export default function Globe({ className = '' }) {
       elapsed += delta
 
       if (!dragging) {
-        world.rotation.y += velocity + (reduced ? 0 : delta * 0.12)
+        // Slow enough that Dubai stays roughly front-of-frame while reading.
+        world.rotation.y += velocity + (reduced ? 0 : delta * 0.045)
         velocity *= 0.94
       }
 

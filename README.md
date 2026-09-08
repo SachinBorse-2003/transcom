@@ -1,12 +1,12 @@
 # TRANSCOM GENERAL TRADING L.L.C — Website
 
 Marketing site for a Dubai-based general trading house, built with **Vite + React + Tailwind CSS v4**,
-**React Router** and **three.js**. Design language takes its cues from UAE trading-house sites such as
+**React Router**. Design language takes its cues from UAE trading-house sites such as
 alibulehya.com and fonoenergy.ae: a deep marine-navy and desert-gold palette, full-bleed photography,
 a sector-led division grid and quote-request calls to action throughout.
 
-The Global Reach section renders an interactive 3D globe — real continents as a dot matrix, with
-animated trade lanes running from Dubai to twelve destination ports.
+The hero is scroll-driven: a container truck drives left to right across a sticky viewport and drags
+the next panel across behind it, so the page changes in step with the delivery.
 
 ## Quick start
 
@@ -77,8 +77,8 @@ src/
   data/site.js          All copy: company, divisions, services, markets, stats, nav
   lib/image.js          Unsplash URL + srcset helper (swap for local images here)
   lib/usePageMeta.js    Per-route <title> and meta description
-  components/           Header, Footer, Layout, Photo, Reveal, Globe, Icon, ui primitives
-  sections/             Page sections (hero, divisions, capabilities, globe, process, CTA)
+  components/           Header, Footer, Layout, Photo, Reveal, Truck, Icon, ui primitives
+  sections/             Page sections (scroll hero, divisions, capabilities, process, CTA)
   pages/                Home, About, Divisions, DivisionDetail, Services, Contact, NotFound
 ```
 
@@ -120,17 +120,16 @@ Remember to re-run the sitemap generator (or add the URL by hand) after adding a
 
 ## Page structure
 
-The site is deliberately short. The home page is five sections:
+The site is deliberately short — the home page is three sections:
 
-1. **Hero** — one statement, two calls to action, three figures along the bottom.
-2. **Divisions** — all nine in a single grid.
-3. **Capabilities** — one list, one line per service.
-4. **Global reach** — the 3D trade-route globe.
-5. **Quote CTA.**
+1. **Hero** — a sticky scroll stage: the truck drives across and wipes the navy hero into the
+   light "Nine divisions" panel.
+2. **Divisions** — all nine in one grid, with the capability list folded in as a single line.
+3. **Quote CTA.**
 
-There is no carousel, stats band, marquee, testimonial slider or process timeline on the home page —
-those were removed to keep it scannable. The process timeline and commercial terms live on
-`/services`, and the story, milestones and licence details live on `/about`.
+No carousel, stats band, marquee, testimonial slider, why-us grid or process timeline. The process
+and commercial terms live on `/services`; the story, milestones and licence details on `/about`.
+Section counts: home 3, divisions 3, contact 3, about 4, services 4.
 
 ## Photography
 
@@ -159,22 +158,34 @@ host must serve `index.html` for unknown paths:
 ## Accessibility & performance notes
 
 - Skip-to-content link, keyboard-visible focus rings, labelled icon buttons, breadcrumb landmarks.
-- All motion (hero Ken Burns, scroll reveals, counters) is disabled under
+- All motion (the scroll-driven hero, scroll reveals) is disabled under
   `prefers-reduced-motion: reduce`.
 - Hero images ship a `srcset` so phones don't download the 1920px asset; below-fold photography is
   lazy-loaded.
 
-## The 3D globe
+## The scroll hero
 
-`src/components/Globe.jsx` draws the trade-route globe with three.js.
+`src/sections/HeroDrive.jsx` is a sticky stage roughly two viewports tall. Scroll progress through it
+drives four things, all written straight to DOM style properties inside a single `requestAnimationFrame`
+so React never re-renders while scrolling:
 
-- **Continents are real.** `src/data/landPoints.js` holds ~2,250 land coordinates, produced by
-  sampling a world GeoJSON on an equal-area lat/lon grid. Regenerate with
-  `node scripts/sample-land.mjs` (adjust `LAT_STEP` for a denser or sparser dot matrix).
-- **Routes come from data.** `tradeHub` and `tradeRoutes` in `src/data/site.js` drive the arcs,
-  markers and travelling pulses — add a port there and it appears on the globe.
-- **It stays out of the initial download.** three.js is ~140 KB gzipped and is lazy-loaded via
-  `React.lazy`, so it is only fetched when a visitor reaches that section. The main bundle is
-  ~100 KB gzipped.
-- **It degrades.** Without WebGL the component falls back to a CSS sphere; under
-  `prefers-reduced-motion` the rotation and pulses stop. Drag to spin on both mouse and touch.
+- the truck's `translateX`, from off-screen left to off-screen right;
+- a `clip-path` on the second panel, pinned to the truck's front bumper (`NOSE_RATIO`), so the new page
+  appears to be towed in;
+- a slight drift and dim on the hero panel as it is covered;
+- wheel rotation, and the fade-out of the scroll hint.
+
+`src/components/Truck.jsx` is a plain SVG — no image asset. Its three wheel groups carry the
+`truck-wheel` class, which is what the stage spins.
+
+Under `prefers-reduced-motion: reduce` the stage is not rendered at all: the two panels become ordinary
+stacked sections with no movement.
+
+## The 3D globe (parked)
+
+`src/components/Globe.jsx` and `src/data/landPoints.js` are the interactive trade-route globe that used
+to sit in the hero — real continents as a dot matrix, twenty arcs from Dubai and fifty-seven further
+ports. Nothing imports them now, so they are excluded from the build entirely (`three` stays in
+`package.json` only for them). Kept in case you want the globe back on another page; delete both files
+plus `three` and `scripts/sample-land.mjs` to prune it.
+

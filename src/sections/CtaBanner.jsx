@@ -24,13 +24,13 @@ export default function CtaBanner() {
         <Reveal>
           <span className="eyebrow text-gold-400">
             <span className="h-px w-10 bg-current opacity-70" aria-hidden="true" />
-            Let's trade
+            Get in touch
           </span>
           <h2 className="mt-5 text-[clamp(1.9rem,3.6vw,2.9rem)] leading-[1.1] font-semibold tracking-[-0.02em] text-white">
-            Send us the product, quantity and destination. You'll have a firm offer within 24 hours.
+            Tell us what you need. We reply with a price in 24 hours.
           </h2>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60">
-            A written quotation with incoterms, validity and payment terms stated on the page.
+            A written quote with the price, the terms and how long it holds.
           </p>
         </Reveal>
 

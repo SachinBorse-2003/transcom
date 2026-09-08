@@ -13,7 +13,7 @@ export default function Divisions() {
   usePageMeta({
     title: 'Trading Divisions — TRANSCOM General Trading L.L.C',
     description:
-      'Nine trading divisions covering petroleum products, solar energy, electrical components, heavy equipment, auto spare parts, mobile accessories, meat and poultry, seafood and food staples.',
+      'Nine product groups: meat and poultry, seafood, cooking oil and rice, machinery, vehicle parts, phones, electrical goods, solar and fuel.',
   })
 
   const visible = filter === 'all' ? divisions : divisions.filter((d) => d.group === filter)
@@ -24,8 +24,8 @@ export default function Divisions() {
     <>
       <PageHero
         eyebrow="Our divisions"
-        title={`${divisionCountWord} trading divisions, one accountable desk`}
-        lead="Each with its own specialists and approved supplier list — and the same documentation standard."
+        title={`${divisionCountWord} product groups, one supplier`}
+        lead="Each group has its own suppliers, checked the same way."
         image="photo-1587293852726-70cdb56c2866"
         crumbs={[{ label: 'Divisions' }]}
       />
@@ -35,8 +35,8 @@ export default function Divisions() {
           <Reveal>
             <SectionHeading
               eyebrow="Browse the range"
-              title="What TRANSCOM trades"
-              lead="Filter by sector, or open a division for the full product list."
+              title="Everything we supply"
+              lead="Pick a sector, or open a group to see the full list."
             />
           </Reveal>
 

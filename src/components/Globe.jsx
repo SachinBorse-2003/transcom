@@ -23,7 +23,7 @@ import {
   WebGLRenderer,
 } from 'three'
 import { LAND_POINTS } from '../data/landPoints'
-import { tradeHub, tradeRoutes } from '../data/site'
+import { tradeHub, tradePorts, tradeRoutes } from '../data/site'
 
 const RADIUS = 1
 const NAVY = new Color('#0d2b45')
@@ -150,32 +150,50 @@ export default function Globe({ className = '' }) {
     const pulses = []
     const disposables = [ocean.geometry, ocean.material, rim.geometry, rim.material, landGeometry, land.material]
 
+    // Geometry is shared across every route marker and pulse — one allocation
+    // each rather than one per destination.
+    const markerGeometry = new SphereGeometry(0.0105, 10, 10)
+    const markerMaterial = new MeshBasicMaterial({ color: GOLD_LIGHT })
+    const pulseGeometry = new SphereGeometry(0.014, 8, 8)
+    const routeMaterial = new LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.26 })
+    disposables.push(markerGeometry, markerMaterial, pulseGeometry, routeMaterial)
+
     tradeRoutes.forEach((destination, i) => {
       const curve = arcCurve(tradeHub, destination)
       const geometry = new BufferGeometry().setFromPoints(curve.getPoints(64))
-      const line = new Line(
-        geometry,
-        new LineBasicMaterial({ color: GOLD, transparent: true, opacity: 0.4 }),
-      )
-      world.add(line)
-      disposables.push(geometry, line.material)
+      world.add(new Line(geometry, routeMaterial))
+      disposables.push(geometry)
 
-      // Destination marker
-      const markerGeometry = new SphereGeometry(0.011, 10, 10)
-      const markerMaterial = new MeshBasicMaterial({ color: GOLD_LIGHT })
       const marker = new Mesh(markerGeometry, markerMaterial)
       marker.position.copy(toVector(destination.lat, destination.lon, RADIUS * 1.006))
       world.add(marker)
-      disposables.push(markerGeometry, markerMaterial)
 
-      // Travelling pulse — staggered so they don't all leave Dubai together
-      const pulseGeometry = new SphereGeometry(0.016, 10, 10)
+      // Travelling pulse — staggered so they don't all leave Dubai together.
+      // Opacity is animated per pulse, so each needs its own material.
       const pulseMaterial = new MeshBasicMaterial({ color: GOLD_LIGHT, transparent: true })
       const pulse = new Mesh(pulseGeometry, pulseMaterial)
       world.add(pulse)
-      disposables.push(pulseGeometry, pulseMaterial)
-      pulses.push({ mesh: pulse, curve, offset: i / tradeRoutes.length, speed: 0.18 + (i % 4) * 0.03 })
+      disposables.push(pulseMaterial)
+      pulses.push({ mesh: pulse, curve, offset: i / tradeRoutes.length, speed: 0.16 + (i % 5) * 0.025 })
     })
+
+    /* ── Secondary ports: markers only, drawn as one point cloud ──────────── */
+    const portPositions = new Float32Array(tradePorts.length * 3)
+    tradePorts.forEach((port, i) => {
+      const v = toVector(port.lat, port.lon, RADIUS * 1.006)
+      portPositions.set([v.x, v.y, v.z], i * 3)
+    })
+    const portGeometry = new BufferGeometry()
+    portGeometry.setAttribute('position', new BufferAttribute(portPositions, 3))
+    const portMaterial = new PointsMaterial({
+      color: GOLD,
+      size: 0.026,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.7,
+    })
+    world.add(new Points(portGeometry, portMaterial))
+    disposables.push(portGeometry, portMaterial)
 
     /* ── Dubai marker with a halo ─────────────────────────────────────────── */
     const hub = toVector(tradeHub.lat, tradeHub.lon, RADIUS * 1.008)

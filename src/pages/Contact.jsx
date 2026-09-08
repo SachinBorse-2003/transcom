@@ -124,8 +124,8 @@ export default function Contact() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Tell us what you need and where it has to land"
-        lead="Product, quantity and destination is enough to start. Firm offer within 24 working hours."
+        title="Tell us what you need"
+        lead="Product, quantity and destination is enough to start. We reply in 24 hours."
         image="photo-1512453979798-5ea266f8880c"
         crumbs={[{ label: 'Contact' }]}
       />
@@ -169,8 +169,8 @@ export default function Contact() {
           <Reveal>
             <SectionHeading
               eyebrow="Request a quotation"
-              title="Start an enquiry"
-              lead="The more you give us, the tighter the price comes back."
+              title="Send us your enquiry"
+              lead="The more detail you give, the better the price."
             />
 
             {sent && (
@@ -224,7 +224,7 @@ export default function Contact() {
                     rows={6}
                     value={form.message}
                     onChange={update}
-                    placeholder="Product, specification, packing, target price and required delivery date."
+                    placeholder="What you need, how much, and when you need it."
                     className={`mt-2.5 w-full resize-y border bg-white px-4 py-3.5 text-[14.5px] transition outline-none placeholder:text-navy-900/30 focus:border-gold-500 ${
                       errors.message ? 'border-red-400' : 'border-navy-950/15'
                     }`}
@@ -241,7 +241,7 @@ export default function Contact() {
                   <Icon name="arrowRight" className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
                 </button>
                 <p className="mt-4 text-[12.5px] text-navy-900/50">
-                  We reply within 24 working hours. Your details are used to quote your enquiry and nothing else.
+                  We reply within 24 hours. We only use your details to answer your enquiry.
                 </p>
               </div>
             </form>
@@ -261,8 +261,8 @@ export default function Contact() {
             <div className="mt-6 bg-navy-950 p-8 text-white">
               <h3 className="font-display text-[17px] font-semibold">Prefer to talk it through?</h3>
               <p className="mt-3 text-[14px] leading-relaxed text-white/60">
-                The trading desk is on the phone from 09:00 to 18:00 Gulf time, Sunday to Thursday. For urgent
-                shipments, WhatsApp is usually fastest.
+                We answer the phone from 09:00 to 18:00, Sunday to Thursday. For anything urgent, WhatsApp is
+                fastest.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a

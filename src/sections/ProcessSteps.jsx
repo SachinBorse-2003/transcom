@@ -5,8 +5,8 @@ import { process } from '../data/site'
 const terms = [
   { label: 'Incoterms', value: 'EXW · FOB · CFR · CIF · DAP · DDP' },
   { label: 'Payment', value: 'T/T · LC at sight · Usance LC · CAD' },
-  { label: 'Load ports', value: 'Jebel Ali · Port Rashid · Sharjah · DXB' },
-  { label: 'Offer validity', value: 'Stated on every quotation' },
+  { label: 'We ship from', value: 'Jebel Ali · Port Rashid · Sharjah · DXB' },
+  { label: 'Price valid for', value: 'Stated on every quote' },
 ]
 
 export default function ProcessSteps() {
@@ -17,8 +17,8 @@ export default function ProcessSteps() {
           <SectionHeading
             align="center"
             eyebrow="How it works"
-            title="From enquiry to delivered container"
-            lead="No stage moves until the previous one is documented."
+            title="How an order works"
+            lead="Four steps, and you always know which one you are at."
           />
         </Reveal>
 

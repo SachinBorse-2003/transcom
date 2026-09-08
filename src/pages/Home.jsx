@@ -1,4 +1,4 @@
-import HomeHero from '../sections/HomeHero'
+import HeroDrive from '../sections/HeroDrive'
 import DivisionsShowcase from '../sections/DivisionsShowcase'
 import CtaBanner from '../sections/CtaBanner'
 import usePageMeta from '../lib/usePageMeta'
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <HomeHero />
+      <HeroDrive />
       <DivisionsShowcase />
       <CtaBanner />
     </>

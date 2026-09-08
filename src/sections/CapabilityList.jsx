@@ -12,11 +12,11 @@ export default function CapabilityList() {
       <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <Reveal>
           <SectionHeading
-            eyebrow="What we handle"
-            title="Everything between the order and the loading bay"
+            eyebrow="Our services"
+            title="What we handle for you"
           />
           <Button to="/services" variant="outline" className="mt-8">
-            How we work
+            See how it works
           </Button>
         </Reveal>
 

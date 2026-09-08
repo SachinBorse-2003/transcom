@@ -2,21 +2,13 @@ import { Link } from 'react-router-dom'
 import DivisionCard from '../components/DivisionCard'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
-import { SectionHeading } from '../components/ui'
-import { divisionCountWord, divisions, services } from '../data/site'
+import { divisions, services } from '../data/site'
 
 export default function DivisionsShowcase() {
   return (
-    <section className="bg-sand-50 py-20 lg:py-24">
+    <section className="bg-sand-50 pt-4 pb-20 lg:pb-24">
       <div className="container-x">
-        <Reveal>
-          <SectionHeading
-            eyebrow="What we trade"
-            title={`${divisionCountWord} divisions. One standard of proof.`}
-          />
-        </Reveal>
-
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {divisions.map((division, i) => (
             <Reveal key={division.slug} delay={(i % 3) * 90}>
               <DivisionCard division={division} />

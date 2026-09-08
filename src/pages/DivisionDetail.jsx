@@ -40,7 +40,7 @@ export default function DivisionDetail() {
       <section className="bg-white py-20 lg:py-24">
         <div className="container-x grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
           <Reveal>
-            <SectionHeading eyebrow="Overview" title={`Inside our ${division.short.toLowerCase()} desk`} />
+            <SectionHeading eyebrow="Overview" title={`About ${division.short.toLowerCase()}`} />
             <p className="mt-7 text-[15.5px] leading-relaxed text-navy-900/70">{division.blurb}</p>
 
             <div className="mt-10 grid gap-px bg-navy-950/8 sm:grid-cols-3">
@@ -52,9 +52,9 @@ export default function DivisionDetail() {
               ))}
             </div>
 
-            <h3 className="mt-12 font-display text-[19px] font-semibold">Product range</h3>
+            <h3 className="mt-12 font-display text-[19px] font-semibold">What we supply</h3>
             <p className="mt-2 text-[14.5px] text-navy-900/60">
-              A working selection — if a line is not listed, ask.
+              A working list — if you need something not shown, just ask.
             </p>
 
             <ul className="mt-7 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
@@ -83,7 +83,7 @@ export default function DivisionDetail() {
                   Enquire about {division.short.toLowerCase()}
                 </h3>
                 <p className="mt-3 text-[14px] leading-relaxed text-white/60">
-                  Product, quantity, destination — firm offer within 24 working hours.
+                  Tell us the product, quantity and destination. Price back in 24 hours.
                 </p>
 
                 <div className="mt-7 space-y-4 border-t border-white/12 pt-7">

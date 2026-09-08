@@ -8,15 +8,15 @@ export default function Services() {
   usePageMeta({
     title: 'Services — Sourcing, Logistics & Trade Support | TRANSCOM General Trading',
     description:
-      'Sourcing and procurement, import and export documentation, freight, warehousing and cold chain, inspection, trade finance and private-label packing from Dubai.',
+      'Finding suppliers, import and export papers, shipping, storage, inspection, payment terms and own-brand packing — from Dubai.',
   })
 
   return (
     <>
       <PageHero
         eyebrow="Services"
-        title="Everything between the purchase order and the loading bay"
-        lead="The middle of the chain — and the accountability that comes with it."
+        title="What we do for you"
+        lead="We handle the buying, checking, papers and shipping."
         image="photo-1553413077-190dd305871c"
         crumbs={[{ label: 'Services' }]}
       />

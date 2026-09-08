@@ -1,17 +1,24 @@
 import { Link } from 'react-router-dom'
 
+/**
+ * Mark: a "T" whose crossbar runs on into an arrow, with two motion lines —
+ * a trading house that moves things forward.
+ */
 export default function Logo({ tone = 'dark', className = '' }) {
   const light = tone === 'light'
+
   return (
     <Link to="/" className={`group flex items-center gap-3 ${className}`} aria-label="TRANSCOM General Trading — home">
       <span className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden bg-navy-950 transition-transform duration-500 group-hover:scale-[1.04]">
-        <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-gold-500/15" />
-        <svg viewBox="0 0 44 44" className="relative h-11 w-11" aria-hidden="true">
-          <path d="M11 14h22v4.4h-8.8V32h-4.4V18.4H11z" fill="var(--color-gold-500)" />
-          <rect x="11" y="35" width="9" height="2.6" fill="var(--color-gold-500)" opacity="0.5" />
-          <rect x="24" y="35" width="9" height="2.6" fill="var(--color-gold-500)" opacity="0.5" />
+        <svg viewBox="0 0 48 48" className="h-11 w-11" aria-hidden="true">
+          {/* T — crossbar and stem */}
+          <rect x="9" y="12" width="22" height="7" fill="var(--color-gold-500)" />
+          <rect x="16.5" y="19" width="7" height="19" fill="var(--color-gold-500)" />
+          {/* arrowhead: the T moving forward */}
+          <path d="M31 8l10 7.5L31 23z" fill="var(--color-gold-500)" opacity="0.9" />
         </svg>
       </span>
+
       <span className="leading-none">
         <span
           className={`block font-display text-[19px] font-extrabold tracking-[0.14em] ${

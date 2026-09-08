@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(node cdp.mjs http://localhost:4173/about clip ab2.png \"1440,5200,1750,1150\" 6000)",
-      "Bash(node cdp.mjs http://localhost:4173/services clip sv2.png \"1440,5600,1400,1200\" 6000)"
+      "Bash(node cdp.mjs http://localhost:4173/services clip sv2.png \"1440,5600,1400,1200\" 6000)",
+      "Bash(python3 -)",
+      "Bash(npm uninstall *)",
+      "Bash(node cdp.mjs http://localhost:4173/ clip truck3.png \"1440,1000,600,420\" 5000)"
     ]
   }
 }

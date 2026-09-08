@@ -18,9 +18,10 @@ export default function Footer() {
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1.5fr_1fr_1.3fr]">
         <div>
           <Logo tone="light" />
-          <p className="mt-6 max-w-xs text-[14.5px] leading-relaxed text-white/55">
-            {company.intro}
+          <p className="mt-6 max-w-xs font-display text-[15px] leading-snug font-semibold text-white/85">
+            {company.promise}
           </p>
+          <p className="mt-4 text-[13px] leading-relaxed text-white/40">{company.productLine}</p>
           <p className="mt-4 font-display text-[12px] tracking-[0.18em] text-gold-500/80 uppercase">
             {company.motto}
           </p>

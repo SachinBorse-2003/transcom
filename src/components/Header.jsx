@@ -87,7 +87,7 @@ function DivisionsMenu({ onNavigate }) {
         <span className="relative">
           <span className="font-display text-lg font-semibold">All {divisionCount} product groups</span>
           <span className="mt-1.5 block text-[13px] text-white/60">
-            Food, machinery and fuel from one supplier.
+            Food, machinery, electronics and furniture from one supplier.
           </span>
           <span className="mt-4 inline-flex items-center gap-2 font-display text-[12px] font-semibold tracking-widest text-gold-400 uppercase">
             Browse

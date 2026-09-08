@@ -13,7 +13,7 @@ export default function Divisions() {
   usePageMeta({
     title: 'Trading Divisions — TRANSCOM General Trading L.L.C',
     description:
-      'Nine product groups: meat and poultry, seafood, cooking oil and rice, machinery, vehicle parts, phones, electrical goods, solar and fuel.',
+      'Nine product groups: meat and poultry, seafood, cooking oil and rice, machinery, vehicle parts, phones, furniture, electrical goods and solar.',
   })
 
   const visible = filter === 'all' ? divisions : divisions.filter((d) => d.group === filter)

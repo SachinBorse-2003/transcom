@@ -7,7 +7,7 @@ export default function Home() {
   usePageMeta({
     title: 'TRANSCOM General Trading L.L.C — Global Trading & Supply Partner, Dubai UAE',
     description:
-      'Dubai-based general trading house supplying petroleum products, solar and electrical equipment, heavy machinery, auto parts, mobile accessories, meat, seafood and food staples to more than 25 markets.',
+      'From global markets to your business. Dubai trading company supplying food, seafood, electronics, solar, machinery, furniture and commodities to more than 25 countries.',
   })
 
   return (

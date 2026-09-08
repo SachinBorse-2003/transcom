@@ -19,7 +19,7 @@ const timeline = [
   {
     year: '2024',
     title: 'Energy desk opens',
-    text: 'Existing customers ask us for fuel and lubricants, so we add them. First storage deal signed in Fujairah.',
+    text: 'Existing customers ask us for machinery and vehicle parts, so we add them. First warehouse taken in Dubai.',
   },
   {
     year: '2025',
@@ -37,7 +37,7 @@ export default function About() {
   usePageMeta({
     title: 'About TRANSCOM General Trading L.L.C — Dubai Trading House',
     description:
-      'Licensed in Dubai in 2023. TRANSCOM General Trading L.L.C supplies food, machinery and fuel to buyers in more than 25 countries.',
+      'Licensed in Dubai in 2023. TRANSCOM General Trading L.L.C supplies food, machinery, electronics and furniture to buyers in more than 25 countries.',
   })
 
   return (
@@ -56,7 +56,7 @@ export default function About() {
         <Reveal className="container-x mb-16 lg:mb-20">
           <img
             src="/brand/transcom-brand.jpg"
-            alt="TRANSCOM General Trading — food, machinery and fuel moving worldwide"
+            alt="TRANSCOM General Trading — food, machinery and goods moving worldwide"
             width="1200"
             height="800"
             loading="lazy"

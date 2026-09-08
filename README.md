@@ -206,8 +206,21 @@ the order across the whole site. `groups` controls the sector filter order in th
 
 ## The logo
 
-`src/components/Logo.jsx` is a single path: a solid block with the "T" knocked out, the crossbar
-ending in a chevron so the letter reads as moving right. The counter is a true cut-out, so it takes
-the colour of whatever is behind it — the block goes gold on dark surfaces (`tone="light"`) and navy
-on light ones (`tone="dark"`), and the T follows the background either way. `public/favicon.svg`
-carries the same mark with the counter filled navy, since a favicon has no reliable backdrop.
+Two assets, deliberately:
+
+- **`public/brand/transcom-brand.png`** (and a 170 KB `.jpg` for the web) is the full brand artwork —
+  globe, product ribbon, container ship, wordmark. It is a *key visual*, not a UI logo: below roughly
+  200px wide the globe, ribbon and three product photos collapse into a smudge. It is used for social
+  sharing (`og:image`) and appears at full size on the About page, and it is the file to send to
+  printers, freight forwarders and exhibition stands.
+- **`src/components/Logo.jsx`** is the header and footer lockup, taken from the same artwork: the
+  wordmark with "TRANS" in the base colour and "COM" in gold, "GENERAL TRADING L.L.C" beneath. This is
+  the part that survives a 44px header, a favicon and a black-and-white fax. `tone="light"` puts
+  TRANS in white for dark surfaces; `tone="dark"` uses navy, and swaps gold-500 for gold-700 because
+  the lighter gold fails contrast on white.
+
+`public/favicon.svg` carries a gold "T" on navy — the same chevron detail, simplified for 16px.
+
+The artwork's own strapline, "A stronger tomorrow, together", is `company.motto` and appears in the
+footer. "FOOD | MACHINERY | FUEL" from the artwork is why the three sector names are now Food,
+Machinery & Parts and Fuel & Power.

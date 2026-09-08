@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Skyline from '../components/Skyline'
 import Truck from '../components/Truck'
 import { Button } from '../components/ui'
-import { divisions, groups, stats } from '../data/site'
+import { company, divisions, groups, stats } from '../data/site'
 
 /** Where the cab's bumper sits inside the SVG viewBox (332 of 400). */
 const NOSE_RATIO = 0.83
@@ -187,8 +187,11 @@ export default function HeroDrive() {
           <span className="text-gold-400">borders</span>
         </h1>
 
-        <p className="mt-6 max-w-md text-[16px] leading-relaxed text-white/65">
-          We buy food, machinery and fuel from checked suppliers and ship it to over 25 countries.
+        <p className="mt-6 max-w-md font-display text-[19px] leading-snug font-semibold text-white/90">
+          {company.promise}
+        </p>
+        <p className="mt-3.5 max-w-sm text-[14.5px] leading-relaxed text-white/50">
+          {company.productLine}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -246,7 +249,7 @@ export default function HeroDrive() {
           groups, one supplier.
         </h2>
         <p className="mt-5 max-w-sm text-[15.5px] leading-relaxed text-navy-900/60">
-          Food, machinery and fuel — bought, checked and shipped by the same team.
+          Food, machinery, electronics and furniture — bought, checked and shipped by one team.
         </p>
       </div>
 

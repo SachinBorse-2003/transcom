@@ -13,11 +13,13 @@ export const company = {
   name: 'TRANSCOM GENERAL TRADING L.L.C',
   shortName: 'TRANSCOM',
   tagline: 'Trade Without Borders',
+  promise: 'From global markets to your business.',
+  productLine: 'Food · Seafood · Electronics · Solar · Machinery · Furniture · Commodities & more',
   motto: 'A stronger tomorrow, together.',
   descriptor: 'General Trading • Import & Export • Dubai, U.A.E.',
   founded: 2023,
   intro:
-    'A Dubai trading company. We buy food, machinery and fuel from checked suppliers and ship it to buyers in over 25 countries.',
+    'A Dubai trading company. We buy food, machinery, electronics and furniture from checked suppliers and ship to buyers in over 25 countries.',
 
   // From the trade licence — the mobile is the only number on record.
   phone: '+971 56 804 4756',
@@ -75,14 +77,14 @@ export const groups = [
     blurb: 'Fresh, chilled and frozen food for shops, caterers and wholesalers.',
   },
   {
-    id: 'industrial',
-    name: 'Machinery & Parts',
-    blurb: 'Machines, vehicle parts and electronics, sold by the container.',
+    id: 'goods',
+    name: 'Machinery & Goods',
+    blurb: 'Machines, vehicle parts, phones and furniture, sold by the container.',
   },
   {
-    id: 'energy',
-    name: 'Fuel & Power',
-    blurb: 'Fuel, solar and electrical supply for utilities and contractors.',
+    id: 'power',
+    name: 'Solar & Electrical',
+    blurb: 'Panels, inverters and electrical supply for contractors.',
   },
 ]
 
@@ -164,7 +166,7 @@ export const divisions = [
   },
   {
     slug: 'heavy-equipment',
-    group: 'industrial',
+    group: 'goods',
     name: 'Heavy Equipment & Machinery',
     short: 'Heavy Equipment',
     tagline: 'New and used machines for construction and quarries.',
@@ -189,7 +191,7 @@ export const divisions = [
   },
   {
     slug: 'auto-spare-parts',
-    group: 'industrial',
+    group: 'goods',
     name: 'Auto Spare Parts & Tyres',
     short: 'Auto Spare Parts',
     tagline: 'Parts for Japanese, Korean, European and American vehicles.',
@@ -203,7 +205,7 @@ export const divisions = [
       'Batteries, alternators and starters',
       'Body panels, lamps and glass',
       'Passenger, 4x4 and TBR tyres',
-      'Lubricants, coolants and workshop consumables',
+      'Coolants and workshop consumables',
       'Heavy-truck and trailer parts',
     ],
     highlights: [
@@ -214,7 +216,7 @@ export const divisions = [
   },
   {
     slug: 'mobile-accessories',
-    group: 'industrial',
+    group: 'goods',
     name: 'Mobile Phones & Accessories',
     short: 'Mobile & Accessories',
     tagline: 'Phones and accessories, in the right spec for your market.',
@@ -238,8 +240,33 @@ export const divisions = [
     ],
   },
   {
+    slug: 'furniture',
+    group: 'goods',
+    name: 'Furniture & Fit-Out',
+    short: 'Furniture',
+    tagline: 'Office, hotel and home furniture by the container.',
+    image: 'photo-1538688525198-9b88f6f53126',
+    blurb:
+      'Desks, seating, bedroom sets and outdoor furniture from factories in China, Turkey, Malaysia and Italy. We check the finish and the packing at the factory, so it arrives ready to sell or install.',
+    products: [
+      'Office desks and workstations',
+      'Task, meeting and executive chairs',
+      'Hotel and bedroom sets',
+      'Sofas and lounge seating',
+      'Dining tables and chairs',
+      'Outdoor and poolside furniture',
+      'Mattresses and bedding',
+      'Shelving, storage and lockers',
+    ],
+    highlights: [
+      { title: 'Checked at the factory', text: 'Finish, fittings and carton packing inspected before shipping.' },
+      { title: 'Flat-pack or built', text: 'Shipped to suit your labour and storage.' },
+      { title: 'Project quantities', text: 'A whole floor or a whole hotel quoted as one job.' },
+    ],
+  },
+  {
     slug: 'electrical-components',
-    group: 'energy',
+    group: 'power',
     name: 'Electrical & Electronic Components',
     short: 'Electrical Components',
     tagline: 'Switchgear, cable and fittings for electrical work.',
@@ -264,7 +291,7 @@ export const divisions = [
   },
   {
     slug: 'solar-energy',
-    group: 'energy',
+    group: 'power',
     name: 'Solar & Renewable Energy',
     short: 'Solar & Renewables',
     tagline: 'Panels, inverters and mounting for solar projects.',
@@ -285,31 +312,6 @@ export const divisions = [
       { title: 'Tier-one only', text: 'Modules sourced from Bloomberg tier-one manufacturers with 25-year warranties.' },
       { title: 'Project consolidation', text: 'Multi-vendor BOM assembled and shipped as a single consignment.' },
       { title: 'Off-grid expertise', text: 'Kits engineered for African and remote GCC deployments.' },
-    ],
-  },
-  {
-    slug: 'petroleum-products',
-    group: 'energy',
-    name: 'Petroleum Products & Lubricants',
-    short: 'Petroleum & Lubricants',
-    tagline: 'Diesel, fuel oil and lubricants from Gulf refineries.',
-    image: 'photo-1516937941344-00b4e0337589',
-    blurb:
-      'Fuel and lubricants straight from Gulf refineries and licensed storage. Every load is inspected before it ships.',
-    products: [
-      'Gasoil / Diesel EN590 10ppm & 50ppm',
-      'Jet A-1 aviation fuel',
-      'Fuel oil — 180 CST & 380 CST',
-      'Base oils — SN150, SN500, SN650',
-      'Automotive & industrial lubricants',
-      'Bitumen 60/70 & 80/100 (drums and bulk)',
-      'Petroleum jelly and greases',
-      'Urea and petrochemical feedstock',
-    ],
-    highlights: [
-      { title: 'Terminal access', text: 'Storage and blending through licensed Fujairah and Hamriyah facilities.' },
-      { title: 'Independent inspection', text: 'SGS, Intertek or client-nominated surveyor at load port and discharge.' },
-      { title: 'Flexible incoterms', text: 'FOB, CIF, CFR and DAP quotations against confirmed demand.' },
     ],
   },
 ]

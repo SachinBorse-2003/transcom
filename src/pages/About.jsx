@@ -18,7 +18,7 @@ const timeline = [
   },
   {
     year: '2024',
-    title: 'Energy desk opens',
+    title: 'Machinery added',
     text: 'Existing customers ask us for machinery and vehicle parts, so we add them. First warehouse taken in Dubai.',
   },
   {
@@ -28,8 +28,8 @@ const timeline = [
   },
   {
     year: '2026',
-    title: 'Nine divisions, one desk',
-    text: 'Machinery, solar and vehicle parts added for contractors in Africa who want one supplier in the Gulf. 25 countries served.',
+    title: 'Nine product groups',
+    text: 'Furniture, solar and electrical goods added for buyers who want one supplier in the Gulf. 25 countries served.',
   },
 ]
 

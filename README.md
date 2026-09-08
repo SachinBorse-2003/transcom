@@ -124,8 +124,7 @@ The site is deliberately short — the home page is three sections:
 
 1. **Hero** — a sticky scroll stage: the truck drives across and tows the light "Nine product
    groups" panel in behind it. Drag the truck to scrub it by hand.
-2. **Divisions** — all nine in one grid (food first, fuel last), with the service list folded in
-   as a single line.
+2. **Divisions** — all nine in one grid (food first), with the service list folded in as a single line.
 3. **Quote CTA.**
 
 No carousel, stats band, marquee, testimonial slider, why-us grid or process timeline. The process
@@ -201,8 +200,12 @@ reading English as a second language will follow first time.
 ## Ordering the product groups
 
 `divisions` in `src/data/site.js` renders in array order everywhere — home grid, `/divisions`, the nav
-dropdown and the hero panel list. Food sits first and fuel last; move an entry in that array to change
-the order across the whole site. `groups` controls the sector filter order in the same way.
+dropdown and the hero panel list. Food sits first; move an entry in that array to change the order
+across the whole site. `groups` controls the sector filter order in the same way.
+
+TRANSCOM does not trade fuel or petroleum products — that division was removed at the client's
+instruction, and no copy anywhere should reintroduce it. Note the brand artwork still contains an oil
+droplet in the product ribbon; if that matters, the artwork needs regenerating.
 
 ## The logo
 
@@ -222,5 +225,7 @@ Two assets, deliberately:
 `public/favicon.svg` carries a gold "T" on navy — the same chevron detail, simplified for 16px.
 
 The artwork's own strapline, "A stronger tomorrow, together", is `company.motto` and appears in the
-footer. "FOOD | MACHINERY | FUEL" from the artwork is why the three sector names are now Food,
-Machinery & Parts and Fuel & Power.
+footer. The strapline "From global markets to your business." is `company.promise`, and the product
+list under it is `company.productLine` — both appear in the hero and the footer.
+
+The three sector names are Food, Machinery & Goods and Solar & Electrical.

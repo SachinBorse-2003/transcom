@@ -174,27 +174,35 @@ export default function HeroDrive() {
   }, [reduced])
 
   const heroContent = (
-    <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
+    <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16">
       <div>
-        <span className="eyebrow text-gold-400">
-          <span className="h-px w-10 bg-current opacity-70" aria-hidden="true" />
+        <span className="inline-flex items-center gap-3 font-display text-[11px] font-semibold tracking-[0.22em] text-gold-400 uppercase">
+          <span className="h-1.5 w-1.5 rotate-45 bg-gold-500" aria-hidden="true" />
           Dubai, U.A.E. · Since 2023
         </span>
 
-        <h1 className="mt-6 text-[clamp(2.5rem,6.4vw,4.6rem)] leading-[0.96] font-semibold tracking-[-0.035em] text-white">
+        <h1 className="mt-7 text-[clamp(2.6rem,6.6vw,4.8rem)] leading-[0.94] font-semibold tracking-[-0.038em] text-white">
           Trade without
           <br />
-          <span className="text-gold-400">borders</span>
+          <span className="bg-gradient-to-br from-gold-200 via-gold-400 to-gold-600 bg-clip-text text-transparent">
+            borders
+          </span>
         </h1>
 
-        <p className="mt-6 max-w-md font-display text-[19px] leading-snug font-semibold text-white/90">
+        <p className="mt-7 max-w-md font-display text-[20px] leading-snug font-semibold text-white">
           {company.promise}
         </p>
-        <p className="mt-3.5 max-w-sm text-[14.5px] leading-relaxed text-white/50">
-          {company.productLine}
-        </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-3.5">
+        <ul className="mt-5 flex max-w-xl flex-wrap items-center gap-x-4 gap-y-2">
+          {company.productLine.split(' · ').map((item) => (
+            <li key={item} className="flex items-center gap-3 text-[13.5px] text-white/55">
+              <span className="h-1 w-1 rounded-full bg-gold-500/70" aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-9 flex flex-wrap items-center gap-3.5">
           <Button to="/divisions">What we trade</Button>
           <Button to="/contact" variant="ghostLight" arrow={false}>
             Get a price
@@ -202,36 +210,38 @@ export default function HeroDrive() {
         </div>
       </div>
 
-      {/* What we carry — keeps the right half of the hero doing work */}
+      {/* What we carry, in a panel so the right half has structure */}
       <div className="hidden lg:block">
-        <ul className="divide-y divide-white/10 border-y border-white/10">
-          {groups.map((group) => (
-            <li key={group.id} className="flex items-baseline gap-5 py-4">
-              <span className="font-display text-[13px] font-semibold text-gold-400">
-                {divisions.filter((d) => d.group === group.id).length}
-              </span>
-              <span>
-                <span className="block font-display text-[15px] font-semibold text-white">{group.name}</span>
-                <span className="mt-1 block text-[13px] leading-snug text-white/45">{group.blurb}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-
-        <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-5">
-          {stats.slice(0, 3).map((stat) => (
-            <div key={stat.label}>
-              <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="font-display text-[24px] leading-none font-semibold text-white">
-                  {stat.value}
-                  {stat.suffix}
+        <div className="bg-white/[0.045] p-8 ring-1 ring-white/10 backdrop-blur-[2px]">
+          <ul className="space-y-px">
+            {groups.map((group) => (
+              <li key={group.id} className="group/row flex items-start gap-5 py-4 first:pt-0">
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center bg-gold-500/12 font-display text-[14px] font-semibold text-gold-400 ring-1 ring-gold-500/25">
+                  {divisions.filter((d) => d.group === group.id).length}
                 </span>
-                <span className="mt-1.5 block text-[12.5px] text-white/45">{stat.label}</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+                <span>
+                  <span className="block font-display text-[15.5px] font-semibold text-white">{group.name}</span>
+                  <span className="mt-1.5 block text-[13px] leading-snug text-white/45">{group.blurb}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+            {stats.slice(0, 3).map((stat) => (
+              <div key={stat.label}>
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <span className="font-display text-[26px] leading-none font-semibold text-gold-400">
+                    {stat.value}
+                    {stat.suffix}
+                  </span>
+                  <span className="mt-2 block text-[12px] leading-snug text-white/45">{stat.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </div>
   )
@@ -284,12 +294,26 @@ export default function HeroDrive() {
       <div ref={stickyRef} className="drive-stage sticky top-0 h-[100svh] overflow-hidden">
         {/* Panel A — the hero */}
         <div className="absolute inset-0 bg-navy-990">
+          {/* Cool light from the top left, warm dusk from the bottom right */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-1/2 right-0 h-[820px] w-[820px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[radial-gradient(circle,rgba(53,109,155,0.25),transparent_62%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_70%_at_8%_0%,rgba(53,109,155,0.34),transparent_62%)]"
           />
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-800/45"
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_60%_at_82%_104%,rgba(217,164,65,0.28),transparent_62%)]"
+          />
+          {/* Fine grid, faded out toward the top */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.055)_1px,transparent_1px)] [background-size:26px_26px] [mask-image:linear-gradient(to_top,black,transparent_78%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[26%] bg-[linear-gradient(to_top,rgba(217,164,65,0.16),transparent_72%)]"
+          />
+          <div
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-800/70"
             data-depth="0.35"
           >
             <Skyline className="h-full w-[130%]" />
@@ -298,13 +322,17 @@ export default function HeroDrive() {
             <div ref={heroRef}>{heroContent}</div>
           </div>
           <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">
-            <div className="h-px w-full bg-white/15" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-gold-500/45 to-transparent" />
             <div className="road-dashes h-[3px] w-full bg-[repeating-linear-gradient(to_right,rgba(255,255,255,0.28)_0_38px,transparent_38px_86px)]" />
           </div>
         </div>
 
         {/* Panel B — towed in behind the truck */}
-        <div ref={panelRef} className="absolute inset-0 bg-sand-50" style={{ clipPath: 'inset(0 100% 0 0)' }}>
+        <div
+          ref={panelRef}
+          className="absolute inset-0 bg-[linear-gradient(160deg,#ffffff_0%,var(--color-sand-50)_45%,var(--color-sand-100)_100%)]"
+          style={{ clipPath: 'inset(0 100% 0 0)' }}
+        >
           <div
             className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-950/[0.07]"
             data-depth="0.35"
@@ -351,9 +379,12 @@ export default function HeroDrive() {
 
         <p
           ref={hintRef}
-          className="pointer-events-none absolute inset-x-0 bottom-7 text-center text-[11px] tracking-[0.22em] text-white/35 uppercase"
+          className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center"
         >
-          Scroll — or drag the truck
+          <span className="inline-flex items-center gap-2.5 bg-white/[0.06] px-4 py-2 text-[10.5px] tracking-[0.22em] text-white/50 uppercase ring-1 ring-white/10 backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold-500" aria-hidden="true" />
+            Scroll — or drag the truck
+          </span>
         </p>
       </div>
     </section>

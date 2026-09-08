@@ -13,6 +13,7 @@ export const company = {
   name: 'TRANSCOM GENERAL TRADING L.L.C',
   shortName: 'TRANSCOM',
   tagline: 'Trade Without Borders',
+  motto: 'A stronger tomorrow, together.',
   descriptor: 'General Trading • Import & Export • Dubai, U.A.E.',
   founded: 2023,
   intro:
@@ -70,17 +71,17 @@ export const registration = {
 export const groups = [
   {
     id: 'food',
-    name: 'Food & Agriculture',
+    name: 'Food',
     blurb: 'Fresh, chilled and frozen food for shops, caterers and wholesalers.',
   },
   {
     id: 'industrial',
-    name: 'Industrial & Mobility',
+    name: 'Machinery & Parts',
     blurb: 'Machines, vehicle parts and electronics, sold by the container.',
   },
   {
     id: 'energy',
-    name: 'Energy & Power',
+    name: 'Fuel & Power',
     blurb: 'Fuel, solar and electrical supply for utilities and contractors.',
   },
 ]

@@ -21,6 +21,9 @@ export default function Footer() {
           <p className="mt-6 max-w-xs text-[14.5px] leading-relaxed text-white/55">
             {company.intro}
           </p>
+          <p className="mt-4 font-display text-[12px] tracking-[0.18em] text-gold-500/80 uppercase">
+            {company.motto}
+          </p>
           <div className="mt-7 flex items-center gap-3">
             {company.social.map((s) => (
               <a

@@ -5,7 +5,16 @@
       "Bash(node cdp.mjs http://localhost:4173/services clip sv2.png \"1440,5600,1400,1200\" 6000)",
       "Bash(python3 -)",
       "Bash(npm uninstall *)",
-      "Bash(node cdp.mjs http://localhost:4173/ clip truck3.png \"1440,1000,600,420\" 5000)"
+      "Bash(node cdp.mjs http://localhost:4173/ clip truck3.png \"1440,1000,600,420\" 5000)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless=new --use-angle=swiftshader --enable-unsafe-swiftshader --hide-scrollbars --remote-debugging-port=9222 --user-data-dir=/private/tmp/claude-501/-Users-sachin-Desktop-transcom/41d9aea3-fe3a-49b1-8301-fa3ae4c11f14/scratchpad/chromeprofile2)",
+      "Bash(node cdp.mjs \"file:///private/tmp/claude-501/-Users-sachin-Desktop-transcom/41d9aea3-fe3a-49b1-8301-fa3ae4c11f14/scratchpad/marks.html\" clip marks.png \"980,1400,0,1180\" 3500)",
+      "Bash(npm run *)",
+      "Bash(pkill -f \"vite preview\")",
+      "Bash(node cdp.mjs http://localhost:4173/ clip logo-hero.png \"1440,900,0,140\" 3500)",
+      "Bash(node cdp.mjs http://localhost:4173/about clip logo-white.png \"1440,900,0,140\" 3500)",
+      "Bash(node cdp.mjs http://localhost:4173/ clip logo-foot.png \"1440,900,3760,220\" 4000)",
+      "Bash(node cdp.mjs http://localhost:4173/ clip wm-dark.png \"1440,900,0,140\" 3500)",
+      "Bash(node cdp.mjs http://localhost:4173/about clip wm-light.png \"1440,900,0,140\" 3500)"
     ]
   }
 }

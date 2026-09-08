@@ -122,9 +122,10 @@ Remember to re-run the sitemap generator (or add the URL by hand) after adding a
 
 The site is deliberately short — the home page is three sections:
 
-1. **Hero** — a sticky scroll stage: the truck drives across and wipes the navy hero into the
-   light "Nine divisions" panel.
-2. **Divisions** — all nine in one grid, with the capability list folded in as a single line.
+1. **Hero** — a sticky scroll stage: the truck drives across and tows the light "Nine product
+   groups" panel in behind it. Drag the truck to scrub it by hand.
+2. **Divisions** — all nine in one grid (food first, fuel last), with the service list folded in
+   as a single line.
 3. **Quote CTA.**
 
 No carousel, stats band, marquee, testimonial slider, why-us grid or process timeline. The process
@@ -189,3 +190,24 @@ ports. Nothing imports them now, so they are excluded from the build entirely (`
 `package.json` only for them). Kept in case you want the globe back on another page; delete both files
 plus `three` and `scripts/sample-land.mjs` to prune it.
 
+
+## Tone of voice
+
+Copy is deliberately plain — short sentences, everyday words, no trade jargon where a common word
+works ("Finding suppliers", not "Sourcing & Procurement"; "We quote", not "Firm offer issued").
+Keep new copy in the same register: say what happens, in the order it happens, in words a buyer
+reading English as a second language will follow first time.
+
+## Ordering the product groups
+
+`divisions` in `src/data/site.js` renders in array order everywhere — home grid, `/divisions`, the nav
+dropdown and the hero panel list. Food sits first and fuel last; move an entry in that array to change
+the order across the whole site. `groups` controls the sector filter order in the same way.
+
+## The logo
+
+`src/components/Logo.jsx` is a single path: a solid block with the "T" knocked out, the crossbar
+ending in a chevron so the letter reads as moving right. The counter is a true cut-out, so it takes
+the colour of whatever is behind it — the block goes gold on dark surfaces (`tone="light"`) and navy
+on light ones (`tone="dark"`), and the T follows the background either way. `public/favicon.svg`
+carries the same mark with the counter filled navy, since a favicon has no reliable backdrop.

@@ -1,35 +1,32 @@
 import { Link } from 'react-router-dom'
 
 /**
- * Mark: a "T" whose crossbar runs on into an arrow, with two motion lines —
- * a trading house that moves things forward.
+ * Header lockup, taken from the TRANSCOM brand artwork: "TRANS" in the base
+ * colour, "COM" in gold.
+ *
+ * The full artwork (globe, ribbon, ship) is a key visual, not a UI logo — it
+ * turns to mush below about 200px, so it lives in /public/brand and is used for
+ * social sharing and print. This wordmark is the part that survives a 44px
+ * header, a favicon and a fax.
  */
 export default function Logo({ tone = 'dark', className = '' }) {
   const light = tone === 'light'
 
   return (
-    <Link to="/" className={`group flex items-center gap-3 ${className}`} aria-label="TRANSCOM General Trading — home">
-      <span className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden bg-navy-950 transition-transform duration-500 group-hover:scale-[1.04]">
-        <svg viewBox="0 0 48 48" className="h-11 w-11" aria-hidden="true">
-          {/* T — crossbar and stem */}
-          <rect x="9" y="12" width="22" height="7" fill="var(--color-gold-500)" />
-          <rect x="16.5" y="19" width="7" height="19" fill="var(--color-gold-500)" />
-          {/* arrowhead: the T moving forward */}
-          <path d="M31 8l10 7.5L31 23z" fill="var(--color-gold-500)" opacity="0.9" />
-        </svg>
-      </span>
-
+    <Link
+      to="/"
+      className={`group flex items-center ${className}`}
+      aria-label="TRANSCOM General Trading L.L.C — home"
+    >
       <span className="leading-none">
-        <span
-          className={`block font-display text-[19px] font-extrabold tracking-[0.14em] ${
-            light ? 'text-white' : 'text-navy-950'
-          }`}
-        >
-          TRANSCOM
+        <span className="block font-display text-[21px] font-extrabold tracking-[0.13em]">
+          <span className={light ? 'text-white' : 'text-navy-950'}>TRANS</span>
+          {/* gold-500 is too pale for text on white, so the light surface gets a deeper gold */}
+          <span className={light ? 'text-gold-500' : 'text-gold-700'}>COM</span>
         </span>
         <span
-          className={`mt-1 block font-display text-[8.5px] font-semibold tracking-[0.3em] ${
-            light ? 'text-white/60' : 'text-navy-900/50'
+          className={`mt-1.5 block font-display text-[8px] font-semibold tracking-[0.28em] ${
+            light ? 'text-white/55' : 'text-navy-900/50'
           }`}
         >
           GENERAL TRADING L.L.C

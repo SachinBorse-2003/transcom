@@ -52,6 +52,19 @@ export default function About() {
 
       {/* Story */}
       <section className="bg-white py-20 lg:py-24">
+        {/* Brand artwork — the one place it is big enough to actually read */}
+        <Reveal className="container-x mb-16 lg:mb-20">
+          <img
+            src="/brand/transcom-brand.jpg"
+            alt="TRANSCOM General Trading — food, machinery and fuel moving worldwide"
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+            className="mx-auto w-full max-w-3xl"
+          />
+        </Reveal>
+
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <SectionHeading

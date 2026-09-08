@@ -168,7 +168,7 @@ export default function Contact() {
         <div className="container-x grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal>
             <SectionHeading
-              eyebrow="Request a quotation"
+              eyebrow="Get a price"
               title="Send us your enquiry"
               lead="The more detail you give, the better the price."
             />

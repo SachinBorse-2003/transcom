@@ -42,7 +42,7 @@ export default function CtaBanner() {
                   <Icon name="phone" className="h-5 w-5" />
                 </span>
                 <span>
-                  <span className="block text-[12px] tracking-wide text-white/45 uppercase">Call the desk</span>
+                  <span className="block text-[12px] tracking-wide text-white/45 uppercase">Call us</span>
                   <span className="block font-display text-[16px] font-semibold text-white transition group-hover:text-gold-400">
                     {company.phone}
                   </span>
@@ -54,7 +54,7 @@ export default function CtaBanner() {
                   <Icon name="mail" className="h-5 w-5" />
                 </span>
                 <span>
-                  <span className="block text-[12px] tracking-wide text-white/45 uppercase">Email the desk</span>
+                  <span className="block text-[12px] tracking-wide text-white/45 uppercase">Email us</span>
                   <span className="block font-display text-[15px] font-semibold break-all text-white transition group-hover:text-gold-400">
                     {company.email}
                   </span>
@@ -63,7 +63,7 @@ export default function CtaBanner() {
             </div>
 
             <Button to="/contact" className="mt-8 w-full">
-              Request a quotation
+              Get a price
             </Button>
           </div>
         </Reveal>

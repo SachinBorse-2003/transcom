@@ -7,7 +7,7 @@ import { divisions, groups, stats } from '../data/site'
 /** Where the cab's bumper sits inside the SVG viewBox (332 of 400). */
 const NOSE_RATIO = 0.83
 const DRIVE_START = 0.08
-const DRIVE_SPAN = 0.82
+const DRIVE_SPAN = 0.86
 
 const clamp = (v, min = 0, max = 1) => Math.min(Math.max(v, min), max)
 const easeInOut = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2)
@@ -277,7 +277,7 @@ export default function HeroDrive() {
   }
 
   return (
-    <section ref={stageRef} className="relative h-[200vh] lg:h-[240vh]">
+    <section ref={stageRef} className="relative h-[190vh] lg:h-[215vh]">
       <div ref={stickyRef} className="drive-stage sticky top-0 h-[100svh] overflow-hidden">
         {/* Panel A — the hero */}
         <div className="absolute inset-0 bg-navy-990">
@@ -286,7 +286,7 @@ export default function HeroDrive() {
             className="pointer-events-none absolute top-1/2 right-0 h-[820px] w-[820px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[radial-gradient(circle,rgba(53,109,155,0.25),transparent_62%)]"
           />
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[15%] left-0 h-[17%] text-navy-800/45"
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-800/45"
             data-depth="0.35"
           >
             <Skyline className="h-full w-[130%]" />
@@ -294,7 +294,7 @@ export default function HeroDrive() {
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">
             <div ref={heroRef}>{heroContent}</div>
           </div>
-          <div className="absolute inset-x-0 bottom-[15%]" aria-hidden="true">
+          <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">
             <div className="h-px w-full bg-white/15" />
             <div className="road-dashes h-[3px] w-full bg-[repeating-linear-gradient(to_right,rgba(255,255,255,0.28)_0_38px,transparent_38px_86px)]" />
           </div>
@@ -303,13 +303,13 @@ export default function HeroDrive() {
         {/* Panel B — towed in behind the truck */}
         <div ref={panelRef} className="absolute inset-0 bg-sand-50" style={{ clipPath: 'inset(0 100% 0 0)' }}>
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[15%] left-0 h-[17%] text-navy-950/[0.07]"
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-950/[0.07]"
             data-depth="0.35"
           >
             <Skyline className="h-full w-[130%]" />
           </div>
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">{nextContent}</div>
-          <div className="absolute inset-x-0 bottom-[15%]" aria-hidden="true">
+          <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">
             <div className="h-px w-full bg-navy-950/15" />
             <div className="road-dashes h-[3px] w-full bg-[repeating-linear-gradient(to_right,rgba(8,36,63,0.22)_0_38px,transparent_38px_86px)]" />
           </div>
@@ -326,7 +326,7 @@ export default function HeroDrive() {
         <div
           ref={truckRef}
           data-truck
-          className="drive-truck absolute bottom-[15%] left-0 w-[240px] translate-y-[8%] cursor-grab touch-pan-y select-none active:cursor-grabbing sm:w-[300px] lg:w-[420px]"
+          className="drive-truck absolute bottom-[11%] left-0 w-[240px] translate-y-[8%] cursor-grab touch-pan-y select-none active:cursor-grabbing sm:w-[300px] lg:w-[420px]"
           style={{ transform: 'translate3d(-420px, 0, 0)' }}
         >
           {/* Exhaust and dust, strongest when moving fastest */}

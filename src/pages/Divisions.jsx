@@ -23,7 +23,7 @@ export default function Divisions() {
   return (
     <>
       <PageHero
-        eyebrow="Our divisions"
+        eyebrow="What we supply"
         title={`${divisionCountWord} product groups, one supplier`}
         lead="Each group has its own suppliers, checked the same way."
         image="photo-1587293852726-70cdb56c2866"
@@ -34,7 +34,7 @@ export default function Divisions() {
         <div className="container-x">
           <Reveal>
             <SectionHeading
-              eyebrow="Browse the range"
+              eyebrow="All products"
               title="Everything we supply"
               lead="Pick a sector, or open a group to see the full list."
             />

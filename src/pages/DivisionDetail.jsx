@@ -108,12 +108,12 @@ export default function DivisionDetail() {
                     className="group flex items-center gap-3.5 text-[14.5px] text-white/75 transition hover:text-white"
                   >
                     <Icon name="whatsapp" className="h-4 w-4 text-gold-500" />
-                    WhatsApp the trading desk
+                    Message us on WhatsApp
                   </a>
                 </div>
 
                 <Button to="/contact" className="mt-8 w-full">
-                  Request a quotation
+                  Get a price
                 </Button>
               </div>
 

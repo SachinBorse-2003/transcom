@@ -85,9 +85,9 @@ function DivisionsMenu({ onNavigate }) {
         />
         <span className="absolute inset-0 bg-gradient-to-t from-navy-990 via-navy-950/70 to-transparent" />
         <span className="relative">
-          <span className="font-display text-lg font-semibold">All {divisionCount} divisions</span>
+          <span className="font-display text-lg font-semibold">All {divisionCount} product groups</span>
           <span className="mt-1.5 block text-[13px] text-white/60">
-            One counterparty across energy, industry and food.
+            Food, machinery and fuel from one supplier.
           </span>
           <span className="mt-4 inline-flex items-center gap-2 font-display text-[12px] font-semibold tracking-widest text-gold-400 uppercase">
             Browse
@@ -189,7 +189,7 @@ export default function Header() {
                 : 'bg-navy-950 text-white hover:bg-gold-500 hover:text-navy-950'
             }`}
           >
-            Request a quote
+            Get a price
             <Icon name="arrowRight" className="h-4 w-4" strokeWidth={2} />
           </Link>
 
@@ -282,7 +282,7 @@ export default function Header() {
               to="/contact"
               className="mt-8 flex items-center justify-center gap-2 bg-gold-500 py-4 font-display text-[13px] font-semibold text-navy-950"
             >
-              Request a quote
+              Get a price
               <Icon name="arrowRight" className="h-4 w-4" strokeWidth={2} />
             </Link>
 

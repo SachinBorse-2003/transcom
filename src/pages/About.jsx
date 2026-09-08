@@ -14,22 +14,22 @@ const timeline = [
   {
     year: '2023',
     title: 'Licensed in Dubai',
-    text: 'TRANSCOM General Trading L.L.C is licensed by the Dubai Department of Economic Development on 31 October 2023 — a single-owner limited liability company registered for General Trading.',
+    text: 'Licensed by the Dubai Department of Economic Development on 31 October 2023 as a single-owner company for General Trading.',
   },
   {
     year: '2024',
     title: 'Energy desk opens',
-    text: 'Demand from existing clients pulls us into petroleum products and lubricants. First terminal relationship signed in Fujairah.',
+    text: 'Existing customers ask us for fuel and lubricants, so we add them. First storage deal signed in Fujairah.',
   },
   {
     year: '2025',
     title: 'Cold chain and consolidation',
-    text: 'Chilled and frozen storage secured in Dubai, letting us consolidate mixed-temperature loads instead of brokering them out.',
+    text: 'We take chilled and frozen storage in Dubai, so mixed loads can be packed by us instead of a third party.',
   },
   {
     year: '2026',
     title: 'Nine divisions, one desk',
-    text: 'Industrial, solar and mobility lines added for contractors across Africa looking for a single consolidator in the Gulf — 25 markets served and a 98% on-time despatch record.',
+    text: 'Machinery, solar and vehicle parts added for contractors in Africa who want one supplier in the Gulf. 25 countries served.',
   },
 ]
 
@@ -37,15 +37,15 @@ export default function About() {
   usePageMeta({
     title: 'About TRANSCOM General Trading L.L.C — Dubai Trading House',
     description:
-      'Licensed in Dubai in 2023, TRANSCOM General Trading L.L.C operates nine trading divisions across energy, industrial and food commodities, serving more than 25 markets.',
+      'Licensed in Dubai in 2023. TRANSCOM General Trading L.L.C supplies food, machinery and fuel to buyers in more than 25 countries.',
   })
 
   return (
     <>
       <PageHero
         eyebrow="About us"
-        title="A young company holding an old-fashioned standard"
-        lead="A two-person foodstuff desk in Bur Dubai that grew one category at a time — saying yes only when we could do it properly."
+        title="About TRANSCOM"
+        lead="We started in Dubai in 2023 selling food. We added a new product group only when we could do it properly."
         image="photo-1552664730-d307ca884978"
         crumbs={[{ label: 'About' }]}
       />
@@ -56,18 +56,18 @@ export default function About() {
           <Reveal>
             <SectionHeading
               eyebrow="Our story"
-              title="We took the messiest part of the chain and made it one desk"
+              title="One company instead of five"
             />
             <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-navy-900/70">
               <p>
-                Trading rarely breaks at sourcing. It breaks in between — a specification that drifts between
-                offer and loading, a certificate written for the wrong destination, a container that arrives
-                with the right product in the wrong pack size.
+                Buying from abroad usually goes wrong in the middle, not at the start. The goods change
+                slightly between the quote and the loading. A certificate is written for the wrong country.
+                The right product arrives in the wrong pack size.
               </p>
               <p>
-                TRANSCOM was built to absorb that: audited producers, a written specification, an inspection
-                booked before loading, and cargo photographed before the seal goes on. Unglamorous — and the
-                reason buyers who took a chance on a new licence in 2023 are still ordering today.
+                We take that part off your hands. We check the supplier, write down exactly what you are
+                buying, inspect and photograph the goods before they ship, and prepare the papers your
+                country actually asks for. Buyers who tried us in 2023 are still ordering today.
               </p>
             </div>
 
@@ -105,14 +105,13 @@ export default function About() {
             <SectionHeading
               tone="light"
               eyebrow="Compliance"
-              title="Licensed, registered and open to checking"
+              title="Licensed and easy to check"
             />
             <p className="mt-5 max-w-md text-[14.5px] leading-relaxed text-white/60">
-              Our licence details are published here so any counterparty can verify them with the DED before
-              the first order.
+              Our licence details are printed here so you can check them with Dubai DED before you order.
             </p>
             <Button to="/contact" className="mt-8">
-              Request our company profile
+              Ask for our company profile
             </Button>
           </Reveal>
 

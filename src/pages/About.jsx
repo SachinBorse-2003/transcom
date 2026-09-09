@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { Button, SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
-import { company, credentials, divisionCount, groups, registration } from '../data/site'
+import { company, credentials, divisionCountWord, groups, registration } from '../data/site'
 import usePageMeta from '../lib/usePageMeta'
 
 /**
@@ -67,7 +67,7 @@ export default function About() {
                 to call, and one company to hold responsible.
               </p>
               <p>
-                Today that covers {divisionCount} product groups: {groups.map((g) => g.name.toLowerCase()).join(', ')}.
+                Today that covers {divisionCountWord.toLowerCase()} product groups: {groups.map((g) => g.name.toLowerCase()).join(', ')}.
               </p>
             </div>
 

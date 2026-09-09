@@ -211,7 +211,7 @@ export default function HeroDrive() {
 
       {/* What we carry, in a panel so the right half has structure */}
       <div className="hidden lg:block">
-        <div className="bg-white/[0.045] p-8 ring-1 ring-white/10 backdrop-blur-[2px]">
+        <div className="bg-navy-990/55 p-8 ring-1 ring-white/12 backdrop-blur-md">
           <ul className="space-y-px">
             {groups.map((group) => (
               <li key={group.id} className="group/row flex items-start gap-5 py-4 first:pt-0">
@@ -300,7 +300,7 @@ export default function HeroDrive() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_60%_at_82%_104%,rgba(217,164,65,0.28),transparent_62%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(95%_60%_at_82%_104%,rgba(217,164,65,0.16),transparent_64%)]"
           />
           {/* Fine grid, faded out toward the top */}
           <div
@@ -312,20 +312,31 @@ export default function HeroDrive() {
             className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[26%] bg-[linear-gradient(to_top,rgba(217,164,65,0.16),transparent_72%)]"
           />
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[46%]"
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[68%] sm:h-[72%]"
             data-depth="0.35"
           >
             <img
-              src="/images/dubai-skyline.jpg"
+              src="/images/dubai-2048.jpg"
+              srcSet="/images/dubai-1280.jpg 1280w, /images/dubai-2048.jpg 2048w, /images/dubai-3840.jpg 3840w"
+              sizes="124vw"
               alt=""
               aria-hidden="true"
-              className="h-full w-[124%] max-w-none object-cover object-bottom opacity-[0.62] [mask-image:linear-gradient(to_top,black_52%,transparent_100%)]"
+              fetchPriority="high"
+              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-95 [mask-image:linear-gradient(to_top,black_42%,transparent_100%)]"
             />
           </div>
-          {/* Navy wash so the photo sits in the palette and the text stays legible */}
+          {/* Scrims: enough to hold the type, not enough to hide the city */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[46%] bg-[linear-gradient(to_top,rgba(5,26,46,0.62),rgba(5,26,46,0.18)_55%,transparent)]"
+            className="pointer-events-none absolute inset-0 lg:hidden bg-[linear-gradient(to_top,rgba(5,26,46,0.5)_0%,rgba(5,26,46,0.58)_38%,rgba(5,26,46,0.8)_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 hidden lg:block lg:bg-[linear-gradient(to_top,rgba(5,26,46,0.42)_0%,rgba(5,26,46,0.14)_34%,rgba(5,26,46,0.62)_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 hidden lg:block lg:bg-[linear-gradient(100deg,rgba(5,26,46,0.84)_0%,rgba(5,26,46,0.5)_36%,rgba(5,26,46,0.06)_66%,transparent_100%)]"
           />
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">
             <div ref={heroRef}>{heroContent}</div>
@@ -347,10 +358,11 @@ export default function HeroDrive() {
             data-depth="0.35"
           >
             <img
-              src="/images/dubai-skyline.jpg"
+              src="/images/dubai-1280.jpg"
               alt=""
               aria-hidden="true"
-              className="h-full w-[124%] max-w-none object-cover object-bottom opacity-[0.13] grayscale [mask-image:linear-gradient(to_top,black_45%,transparent_100%)]"
+              loading="lazy"
+              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-[0.13] grayscale [mask-image:linear-gradient(to_top,black_45%,transparent_100%)]"
             />
           </div>
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">{nextContent}</div>

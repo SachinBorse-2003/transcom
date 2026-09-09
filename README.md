@@ -134,6 +134,18 @@ No carousel, stats band, marquee, testimonial slider, why-us grid or process tim
 and commercial terms live on `/services`; what we do, how we work and the licence details on `/about`.
 Section counts: home 3, divisions 3, contact 3, about 3, services 4.
 
+## The hero skyline
+
+`public/images/dubai-skyline.jpg` is the client's own dusk photograph of the Burj Khalifa, shot from
+the road. It replaced a hand-drawn SVG skyline — real buildings read better than illustrated ones, and
+the motion blur along the bottom of the frame lines up with the road the truck drives on.
+
+The photo carried a small "mood:" watermark, which was patched out by copying clean pixels from
+alongside it (canvas, same-origin, in `scratchpad/patch-img.mjs`). It sits at 95% opacity behind two
+scrims: a vertical one for overall legibility, and a left-weighted horizontal one on `lg` so the
+headline stays crisp while the city shows through on the right. The light panel reuses the same file
+at 13% opacity in greyscale, so both sides of the wipe show the same skyline.
+
 ## Photography
 
 Images are served from Unsplash via `src/lib/image.js` so the repo stays dependency-light. To use

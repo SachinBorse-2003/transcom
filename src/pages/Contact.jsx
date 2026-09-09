@@ -126,7 +126,7 @@ export default function Contact() {
         eyebrow="Contact"
         title="Tell us what you need"
         lead="Product, quantity and destination is enough to start. We reply in 24 hours."
-        image="photo-1512453979798-5ea266f8880c"
+        image="photo-1494412574643-ff11b0a5c1c3"
         crumbs={[{ label: 'Contact' }]}
       />
 

@@ -53,9 +53,12 @@ These drive the footer bottom bar, the About compliance section and every contac
 | `hours` | Sun–Thu 09:00–18:00 assumed | Top bar, contact |
 | `social` | All `#` — point at real profiles or delete the entries | Header, footer |
 | `stats` | 9 divisions is real; 25+ markets, 600+ lines and 98% on-time are estimates | Home, About |
-| About timeline | Only the 2023 entry comes from the licence; 2024–2026 are an editorial narrative | About |
 | Division copy | Product ranges and supplier claims (HALAL certificates, HACCP plants, tier-one modules, terminal access) are written to be typical of the trade — check each against what TRANSCOM actually offers | Division pages |
 | Domain | `https://www.transcomgt.ae` is assumed in `index.html`, `public/robots.txt` and `public/sitemap.xml` | SEO files |
+
+**No invented company history.** An earlier draft carried a 2023–2026 milestone timeline that was
+largely made up. The About page now describes only what TRANSCOM does and how it works — claims the
+company controls and can stand behind — plus the licence facts. Add real milestones if you want them.
 
 **Testimonials removed.** An earlier draft carried three invented client quotes. Publishing fabricated
 testimonials on a live company site is a real legal and reputational risk, so the section and its data
@@ -87,7 +90,7 @@ src/
 | Path | Page |
 | --- | --- |
 | `/` | Home |
-| `/about` | About / story / milestones / compliance |
+| `/about` | About — what we do, how we work, licence details |
 | `/divisions` | All nine divisions, filterable by sector |
 | `/divisions/:slug` | Division detail — product range, checks, enquiry rail |
 | `/services` | Sourcing, logistics, inspection, finance, terms |
@@ -103,7 +106,7 @@ component changes needed.
 ```js
 {
   slug: 'packaging-materials',
-  group: 'industrial',              // 'energy' | 'industrial' | 'food'
+  group: 'goods',                   // 'food' | 'goods' | 'power'
   name: 'Packaging Materials',
   short: 'Packaging',               // used in nav and cards
   tagline: 'One-line summary shown on the card.',
@@ -128,8 +131,8 @@ The site is deliberately short — the home page is three sections:
 3. **Quote CTA.**
 
 No carousel, stats band, marquee, testimonial slider, why-us grid or process timeline. The process
-and commercial terms live on `/services`; the story, milestones and licence details on `/about`.
-Section counts: home 3, divisions 3, contact 3, about 4, services 4.
+and commercial terms live on `/services`; what we do, how we work and the licence details on `/about`.
+Section counts: home 3, divisions 3, contact 3, about 3, services 4.
 
 ## Photography
 
@@ -213,9 +216,12 @@ Two assets, deliberately:
 
 - **`public/brand/transcom-brand.png`** (and a 170 KB `.jpg` for the web) is the full brand artwork —
   globe, product ribbon, container ship, wordmark. It is a *key visual*, not a UI logo: below roughly
-  200px wide the globe, ribbon and three product photos collapse into a smudge. It is used for social
-  sharing (`og:image`) and appears at full size on the About page, and it is the file to send to
-  printers, freight forwarders and exhibition stands.
+  200px wide the globe, ribbon and three product photos collapse into a smudge.
+
+  ⚠️ **It is not currently shown anywhere on the site.** Its sub-line reads "FOOD | MACHINERY | FUEL"
+  and the ribbon contains an oil droplet, but TRANSCOM no longer trades fuel. Once the artwork is
+  regenerated without those elements, put it back on the About page and as the `og:image` in
+  `index.html`. Until then the file is kept for print and reference only.
 - **`src/components/Logo.jsx`** is the header and footer lockup, taken from the same artwork: the
   wordmark with "TRANS" in the base colour and "COM" in gold, "GENERAL TRADING L.L.C" beneath. This is
   the part that survives a 44px header, a favicon and a black-and-white fax. `tone="light"` puts

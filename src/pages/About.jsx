@@ -1,43 +1,43 @@
+import Icon from '../components/Icon'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { Button, SectionHeading } from '../components/ui'
 import CtaBanner from '../sections/CtaBanner'
-import { credentials, registration } from '../data/site'
+import { company, credentials, divisionCount, groups, registration } from '../data/site'
 import usePageMeta from '../lib/usePageMeta'
 
 /**
- * Only the 2023 entry is taken from the trade licence. ⚠️ The three that follow
- * are an editorial narrative — confirm or rewrite them with what actually
- * happened in each year before publishing.
+ * How we work — what a buyer actually gets, rather than an invented company
+ * history. Every claim here is something TRANSCOM controls and can stand behind.
  */
-const timeline = [
+const method = [
   {
-    year: '2023',
-    title: 'Licensed in Dubai',
-    text: 'Licensed by the Dubai Department of Economic Development on 31 October 2023 as a single-owner company for General Trading.',
+    icon: 'search',
+    title: 'We check the supplier first',
+    text: 'Before a first order we look at who we are buying from, not just the price they quote.',
   },
   {
-    year: '2024',
-    title: 'Machinery added',
-    text: 'Existing customers ask us for machinery and vehicle parts, so we add them. First warehouse taken in Dubai.',
+    icon: 'file',
+    title: 'We write the order down',
+    text: 'Grade, size, packing and delivery date are agreed on paper, so nothing drifts between the quote and the loading.',
   },
   {
-    year: '2025',
-    title: 'Cold chain and consolidation',
-    text: 'We take chilled and frozen storage in Dubai, so mixed loads can be packed by us instead of a third party.',
+    icon: 'shield',
+    title: 'We look at the goods',
+    text: 'Inspected and photographed before the container is sealed, so problems are caught here and not at your gate.',
   },
   {
-    year: '2026',
-    title: 'Nine product groups',
-    text: 'Furniture, solar and electrical goods added for buyers who want one supplier in the Gulf. 25 countries served.',
+    icon: 'ship',
+    title: 'We prepare the right papers',
+    text: 'Certificates written for the country you are importing into, so the shipment clears the first time.',
   },
 ]
 
 export default function About() {
   usePageMeta({
-    title: 'About TRANSCOM General Trading L.L.C — Dubai Trading House',
+    title: 'About TRANSCOM General Trading L.L.C — Dubai',
     description:
-      'Licensed in Dubai in 2023. TRANSCOM General Trading L.L.C supplies food, machinery, electronics and furniture to buyers in more than 25 countries.',
+      'A general trading company in Dubai, licensed in 2023. We supply food, machinery, electronics and furniture to buyers in more than 25 countries.',
   })
 
   return (
@@ -45,81 +45,64 @@ export default function About() {
       <PageHero
         eyebrow="About us"
         title="About TRANSCOM"
-        lead="We started in Dubai in 2023 selling food. We added a new product group only when we could do it properly."
+        lead="A general trading company in Dubai, licensed in 2023. We buy from checked suppliers and ship to buyers in more than 25 countries."
         image="photo-1552664730-d307ca884978"
         crumbs={[{ label: 'About' }]}
       />
 
-      {/* Story */}
+      {/* What we do */}
       <section className="bg-white py-20 lg:py-24">
-        {/* Brand artwork — the one place it is big enough to actually read */}
-        <Reveal className="container-x mb-16 lg:mb-20">
-          <img
-            src="/brand/transcom-brand.jpg"
-            alt="TRANSCOM General Trading — food, machinery and goods moving worldwide"
-            width="1200"
-            height="800"
-            loading="lazy"
-            decoding="async"
-            className="mx-auto w-full max-w-3xl"
-          />
-        </Reveal>
-
         <div className="container-x grid gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <SectionHeading
-              eyebrow="Our story"
-              title="One company instead of five"
-            />
+            <SectionHeading eyebrow="What we do" title="One supplier instead of five" />
             <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-navy-900/70">
               <p>
-                Buying from abroad usually goes wrong in the middle, not at the start. The goods change
-                slightly between the quote and the loading. A certificate is written for the wrong country.
-                The right product arrives in the wrong pack size.
+                Most buyers use a different supplier for every product group — one for food, another for
+                machinery, another for electronics. Each one has its own paperwork, its own shipping and its
+                own reasons when something is late.
               </p>
               <p>
-                We take that part off your hands. We check the supplier, write down exactly what you are
-                buying, inspect and photograph the goods before they ship, and prepare the papers your
-                country actually asks for. Buyers who tried us in 2023 are still ordering today.
+                We put all of it on one contract. We find the supplier, agree the price, check the goods
+                before they ship, prepare the papers your country asks for, and deliver. You have one company
+                to call, and one company to hold responsible.
+              </p>
+              <p>
+                Today that covers {divisionCount} product groups: {groups.map((g) => g.name.toLowerCase()).join(', ')}.
               </p>
             </div>
 
+            <Button to="/divisions" className="mt-9">
+              See what we supply
+            </Button>
           </Reveal>
 
-          {/* Milestones sit beside the story rather than in a section of their own */}
+          {/* How we work */}
           <Reveal delay={120}>
             <p className="font-display text-[11px] font-semibold tracking-[0.2em] text-gold-600 uppercase">
-              Milestones
+              How we work
             </p>
-            <div className="mt-7">
-              {timeline.map((t) => (
-                <div key={t.year} className="group flex gap-6 pb-8 last:pb-0">
-                  <div className="flex flex-col items-center">
-                    <span className="grid h-12 w-12 shrink-0 place-items-center border border-navy-950/15 font-display text-[12.5px] font-semibold">
-                      {t.year}
-                    </span>
-                    <span className="mt-2 w-px flex-1 bg-navy-950/12 group-last:hidden" aria-hidden="true" />
+            <ul className="mt-7 divide-y divide-navy-950/10 border-y border-navy-950/10">
+              {method.map((item) => (
+                <li key={item.title} className="flex gap-5 py-5">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center bg-sand-100 text-gold-600">
+                    <Icon name={item.icon} className="h-4.5 w-4.5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-[15.5px] font-semibold">{item.title}</h3>
+                    <p className="mt-1.5 text-[14px] leading-relaxed text-navy-900/60">{item.text}</p>
                   </div>
-                  <div className="pt-2.5">
-                    <h3 className="font-display text-[15.5px] font-semibold">{t.title}</h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-navy-900/60">{t.text}</p>
-                  </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </Reveal>
         </div>
       </section>
 
-      {/* Credentials */}
+      {/* Licence */}
       <section className="bg-navy-950 py-16 text-white lg:py-20">
         <div className="container-x grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <SectionHeading
-              tone="light"
-              eyebrow="Compliance"
-              title="Licensed and easy to check"
-            />
+            <SectionHeading tone="light" eyebrow="Our licence" title="Licensed and easy to check" />
             <p className="mt-5 max-w-md text-[14.5px] leading-relaxed text-white/60">
               Our licence details are printed here so you can check them with Dubai DED before you order.
             </p>
@@ -160,9 +143,14 @@ export default function About() {
             ))}
           </div>
 
-          <p className="mt-8 text-[13.5px] text-white/45">
-            {registration.owner} — {registration.ownerRole}.
-          </p>
+          <div className="mt-8 flex flex-wrap items-baseline justify-between gap-4">
+            <p className="text-[13.5px] text-white/45">
+              {registration.owner} — {registration.ownerRole}.
+            </p>
+            <p className="font-display text-[12px] tracking-[0.18em] text-gold-500/80 uppercase">
+              {company.motto}
+            </p>
+          </div>
         </div>
       </section>
 

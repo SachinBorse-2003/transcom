@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import Skyline from '../components/Skyline'
 import Truck from '../components/Truck'
 import { Button } from '../components/ui'
 import { company, divisions, groups, stats } from '../data/site'
@@ -313,11 +312,21 @@ export default function HeroDrive() {
             className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[26%] bg-[linear-gradient(to_top,rgba(217,164,65,0.16),transparent_72%)]"
           />
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-800/70"
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[46%]"
             data-depth="0.35"
           >
-            <Skyline className="h-full w-[130%]" />
+            <img
+              src="/images/dubai-skyline.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-[124%] max-w-none object-cover object-bottom opacity-[0.62] [mask-image:linear-gradient(to_top,black_52%,transparent_100%)]"
+            />
           </div>
+          {/* Navy wash so the photo sits in the palette and the text stays legible */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[46%] bg-[linear-gradient(to_top,rgba(5,26,46,0.62),rgba(5,26,46,0.18)_55%,transparent)]"
+          />
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">
             <div ref={heroRef}>{heroContent}</div>
           </div>
@@ -334,10 +343,15 @@ export default function HeroDrive() {
           style={{ clipPath: 'inset(0 100% 0 0)' }}
         >
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[17%] text-navy-950/[0.07]"
+            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[40%]"
             data-depth="0.35"
           >
-            <Skyline className="h-full w-[130%]" />
+            <img
+              src="/images/dubai-skyline.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-[124%] max-w-none object-cover object-bottom opacity-[0.13] grayscale [mask-image:linear-gradient(to_top,black_45%,transparent_100%)]"
+            />
           </div>
           <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">{nextContent}</div>
           <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">

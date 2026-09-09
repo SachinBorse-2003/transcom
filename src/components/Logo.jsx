@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
  * ("TRANS" in the base colour, "COM" in gold).
  *
  * The mark is one path — a solid block with the "T" knocked out, its crossbar
- * ending in a chevron so the letter reads as moving right. The counter is a
- * true cut-out, so it picks up whatever sits behind it: gold block on dark
- * surfaces, navy on light ones.
+ * running on into an arrowhead that points right. The counter is a true
+ * cut-out, so it picks up whatever sits behind it: gold block on dark surfaces,
+ * navy on light ones.
  */
-const MARK = 'M0 0h48v48H0z M8 11h32l-5 6.5 5 6.5H27.5v13h-7v-13H8z'
+const MARK = 'M0 0h48v48H0z M8 13h22V9l11 10.5L30 26v-3h-5v16h-8V23H8z'
 
 export default function Logo({ tone = 'dark', className = '' }) {
   const light = tone === 'light'

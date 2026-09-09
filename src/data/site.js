@@ -39,7 +39,7 @@ export const company = {
     mapQuery: 'Dubai, United Arab Emirates',
   },
 
-  hours: 'Sunday – Thursday, 09:00 – 18:00 GST', // ⚠️ confirm
+  hours: 'Monday – Friday, 09:00 – 17:00 GST', // ⚠️ confirm
   licence: 'Trade Licence No. 1256293 · Dubai Department of Economic Development',
 
   social: [

@@ -3,9 +3,8 @@ import { SectionHeading } from '../components/ui'
 import { process } from '../data/site'
 
 const terms = [
-  { label: 'Incoterms', value: 'EXW · FOB · CFR · CIF · DAP · DDP' },
-  { label: 'Payment', value: 'T/T · LC at sight · Usance LC · CAD' },
-  { label: 'We ship from', value: 'Jebel Ali · Port Rashid · Sharjah · DXB' },
+  { label: 'Incoterms', value: 'CFR · CIF' },
+  { label: 'We ship from', value: 'Jebel Ali' },
   { label: 'Price valid for', value: 'Stated on every quote' },
 ]
 

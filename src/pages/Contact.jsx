@@ -117,7 +117,7 @@ export default function Contact() {
       lines: [company.email],
       links: [`mailto:${company.email}`],
     },
-    { icon: 'clock', title: 'Working hours', lines: [company.hours, 'Friday & Saturday — closed'] },
+    { icon: 'clock', title: 'Working hours', lines: [company.hours] },
   ]
 
   return (

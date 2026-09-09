@@ -1,25 +1,40 @@
 import { Link } from 'react-router-dom'
 
 /**
- * Header lockup, taken from the TRANSCOM brand artwork: "TRANS" in the base
- * colour, "COM" in gold.
+ * Lockup: the T-arrow mark plus the wordmark from the brand artwork
+ * ("TRANS" in the base colour, "COM" in gold).
  *
- * The full artwork (globe, ribbon, ship) is a key visual, not a UI logo — it
- * turns to mush below about 200px, so it lives in /public/brand and is used for
- * social sharing and print. This wordmark is the part that survives a 44px
- * header, a favicon and a fax.
+ * The mark is one path — a solid block with the "T" knocked out, its crossbar
+ * ending in a chevron so the letter reads as moving right. The counter is a
+ * true cut-out, so it picks up whatever sits behind it: gold block on dark
+ * surfaces, navy on light ones.
  */
+const MARK = 'M0 0h48v48H0z M8 11h32l-5 6.5 5 6.5H27.5v13h-7v-13H8z'
+
 export default function Logo({ tone = 'dark', className = '' }) {
   const light = tone === 'light'
 
   return (
     <Link
       to="/"
-      className={`group flex items-center ${className}`}
+      className={`group flex items-center gap-3 ${className}`}
       aria-label="TRANSCOM General Trading L.L.C — home"
     >
+      <svg
+        viewBox="0 0 48 48"
+        className="h-11 w-11 shrink-0 transition-transform duration-500 group-hover:scale-[1.04]"
+        aria-hidden="true"
+      >
+        <path
+          d={MARK}
+          fillRule="evenodd"
+          clipRule="evenodd"
+          fill={light ? 'var(--color-gold-500)' : 'var(--color-navy-950)'}
+        />
+      </svg>
+
       <span className="leading-none">
-        <span className="block font-display text-[21px] font-extrabold tracking-[0.13em]">
+        <span className="block font-display text-[20px] font-extrabold tracking-[0.13em]">
           <span className={light ? 'text-white' : 'text-navy-950'}>TRANS</span>
           {/* gold-500 is too pale for text on white, so the light surface gets a deeper gold */}
           <span className={light ? 'text-gold-500' : 'text-gold-700'}>COM</span>

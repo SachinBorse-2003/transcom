@@ -132,7 +132,7 @@ export default function About() {
               { label: 'Dubai Chamber (DCCI) no.', value: registration.dcciNo },
               { label: 'Licensing authority', value: registration.authority },
               { label: 'Issued', value: registration.issued },
-              { label: 'Valid until', value: registration.expires },
+              { label: 'Registered in', value: 'Dubai, United Arab Emirates' },
             ].map((row) => (
               <div key={row.label} className="bg-navy-950 px-6 py-6">
                 <p className="font-display text-[10.5px] font-semibold tracking-[0.18em] text-gold-400 uppercase">
@@ -143,14 +143,9 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-baseline justify-between gap-4">
-            <p className="text-[13.5px] text-white/45">
-              {registration.owner} — {registration.ownerRole}.
-            </p>
-            <p className="font-display text-[12px] tracking-[0.18em] text-gold-500/80 uppercase">
-              {company.motto}
-            </p>
-          </div>
+          <p className="mt-8 text-right font-display text-[12px] tracking-[0.18em] text-gold-500/80 uppercase">
+            {company.motto}
+          </p>
         </div>
       </section>
 

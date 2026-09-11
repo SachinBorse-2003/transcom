@@ -37,13 +37,18 @@ Everything a visitor reads lives in **`src/data/site.js`**.
 | Main licence no. | 1256293 |
 | Register no. | 2120646 |
 | Dubai Chamber (DCCI) no. | 495656 |
-| Issued / expires | 31 October 2023 / 30 October 2027 |
-| Owner & manager | Ikram Ul Haq Abdur Razaq — 100% shareholding |
+| Issued | 31 October 2023 |
 | Mobile / WhatsApp | +971 56 804 4756 |
 | Email | transcomgeneraltrading@gmail.com |
 | P.O. Box | 346-485, Dubai, U.A.E. |
 
-These drive the footer bottom bar, the About compliance section and every contact point on the site.
+These drive the footer bottom bar, the About licence section and every contact point on the site.
+
+**Two licence details are deliberately not published:** the expiry date and the owner's personal name.
+An expiry date invites "are they still trading?" doubt as it approaches, and naming an individual on a
+public page is personal data with no commercial upside — both are on the licence itself if a
+counterparty asks for it. The footer copyright runs `founded–current year` (2023–2026), derived from
+`company.founded`.
 
 ### ⚠️ Still placeholder or editorial — confirm before publishing
 
@@ -136,17 +141,34 @@ Section counts: home 3, divisions 3, contact 3, about 3, services 4.
 
 ## The hero skyline
 
-`public/images/dubai-skyline.jpg` is the client's own dusk photograph of the Burj Khalifa, shot from
-the road. It replaced a hand-drawn SVG skyline — real buildings read better than illustrated ones, and
-the motion blur along the bottom of the frame lines up with the road the truck drives on.
+The hero's skyline is a real photograph, not a drawn silhouette. `public/images/` holds three cuts of
+the same Dubai dusk shot — Burj Khalifa centre, Sheikh Zayed interchange in the foreground, which
+lines up with the road the truck drives on:
 
-The photo carried a small "mood:" watermark, which was patched out by copying clean pixels from
-alongside it (canvas, same-origin, in `scratchpad/patch-img.mjs`). It sits at 95% opacity behind two
-scrims: a vertical one for overall legibility, and a left-weighted horizontal one on `lg` so the
-headline stays crisp while the city shows through on the right. The light panel reuses the same file
-at 13% opacity in greyscale, so both sides of the wipe show the same skyline.
+| File | Size | Served to |
+| --- | --- | --- |
+| `dubai-1280.jpg` | 207 KB | phones |
+| `dubai-2048.jpg` | 491 KB | standard desktops |
+| `dubai-3840.jpg` | 1.3 MB | retina and 4K displays |
 
-## Photography
+The `<img>` carries all three in a `srcSet` with `sizes="124vw"` (the extra 24% is the parallax
+overscan), so a phone never downloads the 4K file. Verified: 390@2x picks 1280, 1440@1x picks 2048,
+1920@2x picks 3840.
+
+It sits at 95% opacity behind scrims that differ by breakpoint — below `xl` the text runs the full
+width so it gets an even scrim plus a text shadow, while `xl` and up gets a left-weighted one so the
+city stays open on the right. The light panel reuses the 1280 cut at 13% in greyscale, so both sides
+of the wipe show the same city.
+
+Two things that are easy to break here:
+
+- **The mask needs both spellings.** `-webkit-mask-image` is set alongside `mask-image`; without the
+  prefix the photo can disappear entirely on older iOS Safari.
+- **The two-column hero starts at `xl`, not `lg`.** At 1024–1279 (10–12" tablets) there is not enough
+  height for the headline and the side panel together — the panel ends up jammed under the header. Below
+  `xl` the hero is a single column and the figures move under the buttons.
+
+## Photography## Photography
 
 Images are served from Unsplash via `src/lib/image.js` so the repo stays dependency-light. To use
 TRANSCOM's own photography, drop files into `public/images/` and set the `image` field to a path —

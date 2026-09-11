@@ -173,8 +173,10 @@ export default function HeroDrive() {
   }, [reduced])
 
   const heroContent = (
-    <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16">
-      <div>
+    <div className="grid gap-12 xl:grid-cols-[1.08fr_0.92fr] xl:items-center xl:gap-16">
+      {/* Below xl the copy sits directly on the photo, so it gets a soft shadow
+          rather than darkening the image for everyone */}
+      <div className="[text-shadow:0_1px_14px_rgba(5,26,46,0.6)] xl:[text-shadow:none]">
         <span className="inline-flex items-center gap-3 font-display text-[11px] font-semibold tracking-[0.22em] text-gold-400 uppercase">
           <span className="h-1.5 w-1.5 rotate-45 bg-gold-500" aria-hidden="true" />
           Dubai, U.A.E. · Since 2023
@@ -207,10 +209,26 @@ export default function HeroDrive() {
             Get a price
           </Button>
         </div>
+
+        {/* Below xl the side panel is hidden, so the figures live here instead */}
+        <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/12 pt-7 xl:hidden">
+          {stats.slice(0, 3).map((stat) => (
+            <div key={stat.label}>
+              <dt className="sr-only">{stat.label}</dt>
+              <dd>
+                <span className="font-display text-[24px] leading-none font-semibold text-gold-400">
+                  {stat.value}
+                  {stat.suffix}
+                </span>
+                <span className="mt-1.5 block text-[12.5px] text-white/45">{stat.label}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
       {/* What we carry, in a panel so the right half has structure */}
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <div className="bg-navy-990/55 p-8 ring-1 ring-white/12 backdrop-blur-md">
           <ul className="space-y-px">
             {groups.map((group) => (
@@ -318,27 +336,27 @@ export default function HeroDrive() {
             <img
               src="/images/dubai-2048.jpg"
               srcSet="/images/dubai-1280.jpg 1280w, /images/dubai-2048.jpg 2048w, /images/dubai-3840.jpg 3840w"
-              sizes="124vw"
+              sizes="(max-width: 640px) 70vw, (max-width: 1280px) 90vw, 124vw"
               alt=""
               aria-hidden="true"
               fetchPriority="high"
-              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-95 [mask-image:linear-gradient(to_top,black_42%,transparent_100%)]"
+              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-95 [-webkit-mask-image:linear-gradient(to_top,black_42%,transparent_100%)] [mask-image:linear-gradient(to_top,black_42%,transparent_100%)]"
             />
           </div>
           {/* Scrims: enough to hold the type, not enough to hide the city */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 lg:hidden bg-[linear-gradient(to_top,rgba(5,26,46,0.5)_0%,rgba(5,26,46,0.58)_38%,rgba(5,26,46,0.8)_100%)]"
+            className="pointer-events-none absolute inset-0 xl:hidden bg-[linear-gradient(to_top,rgba(5,26,46,0.42)_0%,rgba(5,26,46,0.4)_40%,rgba(5,26,46,0.68)_100%)]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 hidden lg:block lg:bg-[linear-gradient(to_top,rgba(5,26,46,0.42)_0%,rgba(5,26,46,0.14)_34%,rgba(5,26,46,0.62)_100%)]"
+            className="pointer-events-none absolute inset-0 hidden xl:block xl:bg-[linear-gradient(to_top,rgba(5,26,46,0.42)_0%,rgba(5,26,46,0.14)_34%,rgba(5,26,46,0.62)_100%)]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 hidden lg:block lg:bg-[linear-gradient(100deg,rgba(5,26,46,0.84)_0%,rgba(5,26,46,0.5)_36%,rgba(5,26,46,0.06)_66%,transparent_100%)]"
+            className="pointer-events-none absolute inset-0 hidden xl:block xl:bg-[linear-gradient(100deg,rgba(5,26,46,0.84)_0%,rgba(5,26,46,0.5)_36%,rgba(5,26,46,0.06)_66%,transparent_100%)]"
           />
-          <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">
+          <div className="container-x relative flex h-full flex-col justify-center pt-[134px] pb-24 lg:pt-[152px] lg:pb-28">
             <div ref={heroRef}>{heroContent}</div>
           </div>
           <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">
@@ -362,10 +380,10 @@ export default function HeroDrive() {
               alt=""
               aria-hidden="true"
               loading="lazy"
-              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-[0.13] grayscale [mask-image:linear-gradient(to_top,black_45%,transparent_100%)]"
+              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-[0.13] grayscale [-webkit-mask-image:linear-gradient(to_top,black_45%,transparent_100%)] [mask-image:linear-gradient(to_top,black_45%,transparent_100%)]"
             />
           </div>
-          <div className="container-x relative flex h-full flex-col justify-center pt-28 pb-36">{nextContent}</div>
+          <div className="container-x relative flex h-full flex-col justify-center pt-[134px] pb-24 lg:pt-[152px] lg:pb-28">{nextContent}</div>
           <div className="absolute inset-x-0 bottom-[11%]" aria-hidden="true">
             <div className="h-px w-full bg-navy-950/15" />
             <div className="road-dashes h-[3px] w-full bg-[repeating-linear-gradient(to_right,rgba(8,36,63,0.22)_0_38px,transparent_38px_86px)]" />

@@ -12,6 +12,7 @@ const pages = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const since = company.founded
 
   return (
     <footer className="bg-navy-990 text-white">
@@ -76,7 +77,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-[12.5px] text-white/40 sm:flex-row">
           <p>
-            © {year} {company.name}
+            © {since}–{year} {company.name}
           </p>
           <p className="text-center sm:text-right">{company.licence}</p>
         </div>

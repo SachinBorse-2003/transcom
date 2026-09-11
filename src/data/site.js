@@ -53,9 +53,13 @@ export const company = {
 
 /* ── Trade licence facts (all verifiable from the DED licence) ─────────────── */
 
+/**
+ * The licence expiry date and the owner's personal name are deliberately not
+ * published: an expiry invites "are they still trading?" doubt as it nears, and
+ * a named individual on a public page is personal data with no upside. Both are
+ * on the licence itself if a counterparty asks.
+ */
 export const registration = {
-  owner: 'Ikram Ul Haq Abdur Razaq',
-  ownerRole: 'Owner & Manager · 100% shareholding',
   legalType: 'Limited Liability Company — Single Owner (LLC-SO)',
   authority: 'Dubai Department of Economic Development',
   activity: 'General Trading',
@@ -63,7 +67,6 @@ export const registration = {
   registerNo: '2120646',
   dcciNo: '495656',
   issued: '31 October 2023',
-  expires: '30 October 2027',
 }
 
 /* `stats` is defined below the divisions array so the division count stays in step. */
@@ -467,7 +470,6 @@ export const credentials = [
   { label: 'General Trading', sub: 'Licensed activity — active' },
   { label: 'Dubai Chamber', sub: 'DCCI No. 495656' },
   { label: 'Established 2023', sub: 'Licensed 31 October 2023' },
-  { label: 'Valid to 2027', sub: 'Licence expiry 30 October 2027' },
 ]
 
 /* ── Navigation ────────────────────────────────────────────────────────────── */

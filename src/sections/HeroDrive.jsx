@@ -330,7 +330,7 @@ export default function HeroDrive() {
             className="pointer-events-none absolute inset-x-0 bottom-[11%] h-[26%] bg-[linear-gradient(to_top,rgba(217,164,65,0.16),transparent_72%)]"
           />
           <div
-            className="skyline-layer pointer-events-none absolute right-0 bottom-[11%] left-0 h-[68%] sm:h-[72%]"
+            className="skyline-layer pointer-events-none absolute top-0 right-0 bottom-0 left-0 h-full sm:top-auto sm:bottom-[11%] sm:h-[72%]"
             data-depth="0.35"
           >
             <img
@@ -340,7 +340,7 @@ export default function HeroDrive() {
               alt=""
               aria-hidden="true"
               fetchPriority="high"
-              className="h-full w-[124%] max-w-none object-cover object-[center_78%] opacity-95 [-webkit-mask-image:linear-gradient(to_top,black_42%,transparent_100%)] [mask-image:linear-gradient(to_top,black_42%,transparent_100%)]"
+              className="h-full w-[140%] max-w-none object-cover object-[center_72%] opacity-95 [-webkit-mask-image:linear-gradient(to_top,black_32%,transparent_100%)] [mask-image:linear-gradient(to_top,black_32%,transparent_100%)] sm:w-[124%] sm:object-[center_78%] sm:[-webkit-mask-image:linear-gradient(to_top,black_42%,transparent_100%)] sm:[mask-image:linear-gradient(to_top,black_42%,transparent_100%)]"
             />
           </div>
           {/* Scrims: enough to hold the type, not enough to hide the city */}

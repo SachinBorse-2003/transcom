@@ -296,8 +296,21 @@ export default function HeroDrive() {
   if (reduced) {
     return (
       <>
-        <section className="bg-navy-990 pt-[132px] pb-16">
-          <div className="container-x">{heroContent}</div>
+        <section className="relative overflow-hidden bg-navy-990 pt-[132px] pb-16">
+          <img
+            src="/images/dubai-2048.jpg"
+            srcSet="/images/dubai-1280.jpg 1280w, /images/dubai-2048.jpg 2048w, /images/dubai-3840.jpg 3840w"
+            sizes="100vw"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[center_72%] opacity-95 [-webkit-mask-image:linear-gradient(to_top,black_32%,transparent_100%)] [mask-image:linear-gradient(to_top,black_32%,transparent_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(5,26,46,0.42)_0%,rgba(5,26,46,0.4)_40%,rgba(5,26,46,0.68)_100%)]"
+          />
+          <div className="container-x relative">{heroContent}</div>
         </section>
         <section className="bg-sand-50 pt-16 pb-4">
           <div className="container-x">{nextContent}</div>
